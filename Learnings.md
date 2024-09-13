@@ -86,3 +86,45 @@
 
 ##3:
 
+    To redue complexity of reactelements to build HTML, JSX was created
+    - JSX is not HTML in Javascript.
+    - JSX is HTML-like syntax or XML-like.
+
+    - so there is no difference between these as both return JS object 
+    const heading = React.createElement("h1", {},"Hello World") and 
+    const heading = (
+      <h1 id="heading" className="head" tabIndex="2">
+        Hello World
+      </h1>
+    );
+
+    - JSX is not pure javascript so JS engine or browser wont understand it directly.
+    - jsx => babel transpiles to react.createElement => js object => rendered to HTML element
+
+    Babel: 
+    - javascript compiler and transpiler
+    - takes JSX => converts to code that JS engine Understands or React understands
+
+    - Now JSX is not HTML either as it uses className and tabIndex like camelCase.
+
+    - Write Multiline JSX with () simple bracket.
+
+    React Component: 
+    - class based component (old)
+    - functional component (new)
+
+    React Functional Component
+    - just normal javascript function
+    - Start with Capital Letter (must)
+    - returns JSX code / React Element
+    - can use arrow function or even function keyword like normal functions
+    - *Cannot render it directly its component not element
+    - Component Composition: using component inside another component
+    - with <Componnet />
+    - with <Component></Component>
+    - with calling component function inside {}: {Description()}
+
+    You can run any js code in {} inside JSX, any varibles, jsx elements, even logs.
+    <h2>The value of number is {number}</h2>
+
+

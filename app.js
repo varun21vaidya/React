@@ -1,22 +1,45 @@
 import React from "react";
-import ReactDOM from "react-dom";
-const parent = React.createElement("div", { id: "parent" }, [
-    React.createElement("div", { id: "child1" }, [
-      React.createElement("h1", {}, "I am MAIN TAG"),
-      React.createElement("h2", {}, "I am H2 Tag"),
-    ]),
-    React.createElement("div", { id: "child2" }, [
-      React.createElement("h3", {}, "I am H3 Tag"),
-      React.createElement("h4", {}, "I am H4 Tag"),
-    ]),
-  ]);
-  console.log("parent", parent); // -->object
-  // ie React.createElement does not create HTML element it creates object
-  const root = ReactDOM.createRoot(document.getElementById("root"));
-  
-  // render is creating element by taking the object and converting it into heading tag and modify dom tree
-  root.render(parent);
-  
-  // now here render will replace current dom tree inside root, so current structure in root will be replaced by parent
-  // althogh it can only modify root and does not affect outside root.
-  
+import ReactDOM from "react-dom/client";
+
+// jsx => babel transpiles to react.createElement => js object => rendered to HTML element
+const heading = (
+  <h1 id="heading" className="head" tabIndex="2">
+    Hello World from Heading
+  </h1>
+);
+
+// you can use any js code or element using {} inside jsx
+const Description = () => <h3>Here is Heading {heading}</h3>;
+
+const number = 10000;
+
+// react functional component:
+const ReactComponent1 = () => (
+  <div id="container">
+    {/* with <Componnet /> */}
+    <Description />
+    {/* with <Component></Component> */}
+    <Description></Description>
+    {/* with calling component function */}
+    {Description()}
+
+    <h1 id="comp" className="comp" tabIndex="2">
+      Hello World from reactComponent
+    </h1>
+    {/* you can even access varibles with {} as you can use any js code */}
+    <h2>The value of number is {number}</h2>
+  </div>
+);
+
+
+//or use { return jsx} or function instead of arrow function 
+const ReactComponent2 = () => {
+  return (
+    <h1 id="heading" className="head" tabIndex="2">
+      Hello World from reactComponent
+    </h1>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<ReactComponent1 />);

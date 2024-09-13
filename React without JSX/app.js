@@ -17,7 +17,7 @@ console.log("parent", parent); // -->object
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // render is creating element by taking the object and converting it into heading tag and modify dom tree
-root.render(parent);
+// root.render(parent);
 
 // now here render will replace current dom tree inside root, so current structure in root will be replaced by parent
 // althogh it can only modify root and does not affect outside root.
