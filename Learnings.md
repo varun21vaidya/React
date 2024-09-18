@@ -220,7 +220,7 @@
       
       import {useState} from 'react';
 
-  #### useState(): 
+  ### useState() Hook: 
 
       - Maintains state of variable
       - scope is inside the component
@@ -280,3 +280,89 @@
 
       So as soon as you call setHotelList, it starts its reconcilliation algorithm, and starts rerendering your page.
       Thats why you need saperate call function to update state, so when you call it react will find the div and update UI.
+
+    
+## 6:
+  
+  #### Fetching data from API:
+
+      2 ways to show:
+
+      1. As soon as our Page loads --> make API call --> wait for page around 500ms --> render whole page
+      
+      2. As soon as our Page loads --> we will render UI with skalaton (Shimmer UI)--> make API call --> rerender app with new Data
+
+      In react we will always be using 2nd approach, why? react has one of the fastest render cycle speed.
+
+  ### useEffect() Hook:
+
+  Takes 2 arguments, 
+  - call back function
+  - dependancy array
+
+  the call back function will be called after your component is rendered ie after finishing render cycle
+  If you want to do something after rendering the component, use it with useEffect.
+
+  useEffect(()=> {console.log("useeffect call")}, [])
+
+  - Empty Dependency Array ([]): The effect will run only once after the initial render.
+
+  - No Dependency Array: The effect will run after every render (including on every state or prop change).
+
+  - Dependencies in the Array: The effect will run only when the specified dependencies change.
+      - eg 
+      const [count, setCount] = useState(0);
+      useEffect(() => {
+          console.log(`Effect runs when count changes: count is ${count}`);
+      }, [count]); // Effect runs only when 'count' changes
+
+  - the rest of the code first runs then after rendering is completed, callback inside useeffect will run
+
+  #### Conditional Rendering:
+    - rendering based on certain condition
+    - if (loading) {return <ShimmerUI />}
+
+  #### Why State Variable is used in first place?
+
+  When you change any normal varible, react wont know the variable value has been changed.
+  because React doesn't track regular variables.  and it wont upate UI accrodingly.
+  But with state variable, when you modify it with setVaribleName, react will rerender that component and refresh specific component that will renrender DOM.
+  YES IT WILL RE-RENDER WHOLE COMPONENT THAT STATE VARIABLE IS IN, ie REACT TRIGGERS RECONSCILLIATION CYCLE.
+
+  #### but isnt it expensive to reload everything in component?
+
+  It may sound expensive to re-render the whole component, but React uses an efficient reconciliation algorithm that minimizes performance costs.
+
+    - Virtual DOM: React creates a virtual representation of the DOM (Virtual DOM). When the state changes, React compares the new virtual DOM with the previous version using a process called diffing.
+
+    - Efficient Updates: React doesn't replace the entire DOM. Instead, it updates only the parts of the actual DOM that have changed. This makes updates faster and more efficient because React avoids unnecessary modifications to the DOM.
+
+  So, while React triggers a re-render for the entire component where the state variable is used, React only updates the actual DOM where necessary. The virtual DOM comparison process ensures that only the specific parts that have changed are modified in the real DOM.
+
+  #### How const changes state varibles?
+
+  Now, suppose, we have const [btnName, setBtnName] = useState("login")
+  and onclick of button, we want to change btnName to logout. with setBtnName("logout")
+
+  But how are we modifying const variable?
+
+  actually react is inserting new value in useState and rerendering component, it means its all new varible is being created,
+  but as whole compoenent is recreated const doesnt give error, so whole new variable is created with updated value.
+
+
+  #### Function Reference Issue:
+
+  suppose you are toggling this button with onclick on toggleBtn function
+  <button className='login-btn' onClick={toggleBtn()} >{loginBtn}</button>
+
+  But this will give error: Too many re-renders. React Limits number of renders to prevent infinite loop.
+  Why?
+
+  cz inside toggleBtn we are using setBtnName(value), and if we call toggleBtn() immediately during the render phase,
+  it will cause state to update striggering rerender, which will again call toggleBtn() thus entering in infinite loop
+
+  The solution is to pass function reference instead of calling the function.
+  so onClick={toggleBtn}
+
+  
+

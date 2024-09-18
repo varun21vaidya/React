@@ -1,6 +1,13 @@
+import { useState } from 'react';
 import logo from '../assets/snackhunt-logo.png';
 
-const Header = ()=> {return (
+const Header = ()=> {
+    
+    const [loginBtn, setLoginBtn] = useState("Login");
+
+    function toggleBtn(){
+        loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login")}
+    return (
     <div id="heading" className="header">
         <div id="logo" className="logo">
             <img src={logo} className="logo"/>
@@ -11,6 +18,11 @@ const Header = ()=> {return (
                 <li>About Us</li>
                 <li>Contact Us</li>
                 <li>Cart</li>
+                <li>
+                    <button className='login-btn' onClick={toggleBtn}>
+                        {loginBtn}
+                    </button>
+                </li>
             </ul>
         </nav>
     </div>

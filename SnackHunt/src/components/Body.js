@@ -1,5 +1,6 @@
 import fetchData from "./fetchData";
 import HotelCard from "./HotelCard";
+import ShimmerContainer from "./ShimmerContainer"
 import { useEffect, useState } from "react";
 
 
@@ -9,22 +10,22 @@ export const Body = () => {
     const [hotelDataList, setHotelDataList] = useState([]); //initialize state for hotel data
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [filteredList, setFilteredDataList] = useState([]);
+    const [filteredList, setFilteredList] = useState([]);
     // let filteredList = hotelDataList;
+
+    const loadData = async () => {
+        try {
+            const data = await fetchData();
+            setHotelDataList(data);
+            setLoading(false);
+            setFilteredList(data);
+        } catch (error) {
+            setError(error.message);
+            setLoading(false);
+        }
+    };
+
     useEffect(() => {
-        const loadData = async () => {
-            try {
-                const data = await fetchData();
-                // console.log("data loaded", data)
-                setHotelDataList(data);
-                setLoading(false);
-                setFilteredDataList(data);
-                // filteredList = hotelDataList
-            } catch (error) {
-                setError(error.message);
-                setLoading(false);
-            }
-        };
         loadData();
     }, []); // Empty dependency array ensures this runs only once on component mount
 
@@ -34,23 +35,28 @@ export const Body = () => {
 
         // Reset to original list when input is cleared or backspace/delete
         if (searchTerm === "") {
-            setFilteredDataList(hotelDataList);
+            setFilteredList(hotelDataList);
             return;
         }
-        // When we use backspace filter again through whole list
-        if (event.code == "Delete" || event.code == "Backspace") {
+        else{
             tempList = hotelDataList.filter((hotel) => {
                 let x = hotel?.info?.name?.toLowerCase().indexOf(searchTerm);
                 return x > -1;
             });
         }
-        else{
-            tempList = filteredList.filter((hotel) => {
-                let x = hotel?.info?.name?.toLowerCase().indexOf(searchTerm);
-                return x > -1;
-            });
-        }
-        setFilteredDataList(tempList);
+        setFilteredList(tempList);
+    }
+
+    if(loading){
+        return (
+            <div className="body">
+            <div className="search">
+                <input
+                    className="searchbar"></input>
+                </div>
+                <ShimmerContainer />
+            </div>
+        )
     }
 
     return (
@@ -70,7 +76,7 @@ export const Body = () => {
                         const tempList = filteredList.filter(
                             (hotel) => hotel?.info?.avgRating <= 4
                         );
-                        setFilteredDataList(tempList);
+                        setFilteredList(tempList);
                         console.log("filtered", filteredList);
                     }}
                 >
@@ -82,7 +88,7 @@ export const Body = () => {
                 <button
                     className="filter-btn"
                     onClick={() => {
-                        setFilteredDataList(hotelDataList);
+                        setFilteredList(hotelDataList);
                         console.log("filter reset", filteredList);
 
                     }}
