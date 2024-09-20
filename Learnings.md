@@ -296,73 +296,148 @@
 
   ### useEffect() Hook:
 
-  Takes 2 arguments, 
-  - call back function
-  - dependancy array
+      Takes 2 arguments, 
+      - call back function
+      - dependancy array
 
-  the call back function will be called after your component is rendered ie after finishing render cycle
-  If you want to do something after rendering the component, use it with useEffect.
+      the call back function will be called after your component is rendered ie after finishing render cycle
+      If you want to do something after rendering the component, use it with useEffect.
 
-  useEffect(()=> {console.log("useeffect call")}, [])
+      useEffect(()=> {console.log("useeffect call")}, [])
 
-  - Empty Dependency Array ([]): The effect will run only once after the initial render.
+      - Empty Dependency Array ([]): The effect will run only once after the initial render.
 
-  - No Dependency Array: The effect will run after every render (including on every state or prop change).
+      - No Dependency Array: The effect will run after every render (including on every state or prop change).
 
-  - Dependencies in the Array: The effect will run only when the specified dependencies change.
-      - eg 
-      const [count, setCount] = useState(0);
-      useEffect(() => {
-          console.log(`Effect runs when count changes: count is ${count}`);
-      }, [count]); // Effect runs only when 'count' changes
+      - Dependencies in the Array: The effect will run only when the specified dependencies change.
+          - eg 
+          const [count, setCount] = useState(0);
+          useEffect(() => {
+              console.log(`Effect runs when count changes: count is ${count}`);
+          }, [count]); // Effect runs only when 'count' changes
 
-  - the rest of the code first runs then after rendering is completed, callback inside useeffect will run
+      - the rest of the code first runs then after rendering is completed, callback inside useeffect will run
 
   #### Conditional Rendering:
-    - rendering based on certain condition
-    - if (loading) {return <ShimmerUI />}
+      - rendering based on certain condition
+      - if (loading) {return <ShimmerUI />}
 
   #### Why State Variable is used in first place?
 
-  When you change any normal varible, react wont know the variable value has been changed.
-  because React doesn't track regular variables.  and it wont upate UI accrodingly.
-  But with state variable, when you modify it with setVaribleName, react will rerender that component and refresh specific component that will renrender DOM.
-  YES IT WILL RE-RENDER WHOLE COMPONENT THAT STATE VARIABLE IS IN, ie REACT TRIGGERS RECONSCILLIATION CYCLE.
+      When you change any normal varible, react wont know the variable value has been changed.
+      because React doesn't track regular variables.  and it wont upate UI accrodingly.
+      But with state variable, when you modify it with setVaribleName, react will rerender that component and refresh specific component that will renrender DOM.
+      YES IT WILL RE-RENDER WHOLE COMPONENT THAT STATE VARIABLE IS IN, ie REACT TRIGGERS RECONSCILLIATION CYCLE.
 
   #### but isnt it expensive to reload everything in component?
 
-  It may sound expensive to re-render the whole component, but React uses an efficient reconciliation algorithm that minimizes performance costs.
+      It may sound expensive to re-render the whole component, but React uses an efficient reconciliation algorithm that minimizes performance costs.
 
-    - Virtual DOM: React creates a virtual representation of the DOM (Virtual DOM). When the state changes, React compares the new virtual DOM with the previous version using a process called diffing.
+        - Virtual DOM: React creates a virtual representation of the DOM (Virtual DOM). When the state changes, React compares the new virtual DOM with the previous version using a process called diffing.
 
-    - Efficient Updates: React doesn't replace the entire DOM. Instead, it updates only the parts of the actual DOM that have changed. This makes updates faster and more efficient because React avoids unnecessary modifications to the DOM.
+        - Efficient Updates: React doesn't replace the entire DOM. Instead, it updates only the parts of the actual DOM that have changed. This makes updates faster and more efficient because React avoids unnecessary modifications to the DOM.
 
-  So, while React triggers a re-render for the entire component where the state variable is used, React only updates the actual DOM where necessary. The virtual DOM comparison process ensures that only the specific parts that have changed are modified in the real DOM.
+      So, while React triggers a re-render for the entire component where the state variable is used, React only updates the actual DOM where necessary. The virtual DOM comparison process ensures that only the specific parts that have changed are modified in the real DOM.
 
   #### How const changes state varibles?
 
-  Now, suppose, we have const [btnName, setBtnName] = useState("login")
-  and onclick of button, we want to change btnName to logout. with setBtnName("logout")
+      Now, suppose, we have const [btnName, setBtnName] = useState("login")
+      and onclick of button, we want to change btnName to logout. with setBtnName("logout")
 
-  But how are we modifying const variable?
+      But how are we modifying const variable?
 
-  actually react is inserting new value in useState and rerendering component, it means its all new varible is being created,
-  but as whole compoenent is recreated const doesnt give error, so whole new variable is created with updated value.
+      actually react is inserting new value in useState and rerendering component, it means its all new varible is being created,
+      but as whole compoenent is recreated const doesnt give error, so whole new variable is created with updated value.
 
 
   #### Function Reference Issue:
 
-  suppose you are toggling this button with onclick on toggleBtn function
-  <button className='login-btn' onClick={toggleBtn()} >{loginBtn}</button>
+      suppose you are toggling this button with onclick on toggleBtn function
+      <button className='login-btn' onClick={toggleBtn()} >{loginBtn}</button>
 
-  But this will give error: Too many re-renders. React Limits number of renders to prevent infinite loop.
-  Why?
+      But this will give error: Too many re-renders. React Limits number of renders to prevent infinite loop.
+      Why?
 
-  cz inside toggleBtn we are using setBtnName(value), and if we call toggleBtn() immediately during the render phase,
-  it will cause state to update striggering rerender, which will again call toggleBtn() thus entering in infinite loop
+      cz inside toggleBtn we are using setBtnName(value), and if we call toggleBtn() immediately during the render phase,
+      it will cause state to update striggering rerender, which will again call toggleBtn() thus entering in infinite loop
 
-  The solution is to pass function reference instead of calling the function.
-  so onClick={toggleBtn}
+      The solution is to pass function reference instead of calling the function.
+      so onClick={toggleBtn}
 
-  
+## 7:
+
+  ### Hooks Tips:
+      - Try to call hooks on top of components inside them.
+      - and it doesnt make any sense using hooks outside compoenent, cz they are part of compoenet.
+      - Dont User State Variables inside if else conditions, or for loops, or even functions.
+
+  ### Router Pages:
+      - use react-router-dom
+      - import { createBrowserRouter} from "react-router-dom"; 
+      - correct way to handle routings
+      - const appRouter = createBrowserRouter([
+        {
+        path:"/",
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
+            {
+                path:"/",
+                element: <Body />
+            },
+            {
+                path:"/restaurant/:resId",
+                element: <RestaurantPage />
+            }
+          ]
+        }])
+      - render app router instead of applayout
+      - root.render(<RouterProvider router={appRouter} />);
+
+      - Error element is used to handle errors and show customized page
+      - It uses error Hook, useRouteError.
+
+      - now if you want to keep header in all routes so you need to put others in childeren
+      - and use Outlet from react-router-dom 
+      - const AppLayout = ()=>{
+            return (
+                <div className="app">
+                <Header />
+                <Outlet />
+                </div>
+            )
+        }
+      - Here Outlet will replace other compoenents according to path.
+    
+  #### Link:
+      When you are in React and you want to route to some other page route, Never use anker tag, <a>, cz it will relode entire page.
+
+      Use Link Componenet from react-router-dom.
+      its similar to anker tag, but it wont reload page. Cz react keeps track of those links and keeps pages on single page, without reloading. 
+      Thats why its single page application, cz its not reloading to saperate page.
+
+      - so instead of <a href="/about" >About Us</a>
+      - use <Link to="/about" >About Us</Link>
+
+  #### Routing in Web Apps:
+
+  1. Server Sie Routing: 
+      When you have /about, in <a> it reloads whole page, sends network call to /about html page, fethes that html, and renders it on UI.
+
+  2. Client Side Routing:
+      We are not making any network calls cz all components are already loaded, we are not fetching page.
+
+  #### Dynamic Route:
+
+  Suppose when we click on any card, we want ot get info about that specific hotel card.
+  and get detailed hotel info and menu, offers from it.
+  so for that we need to implement, dynamic route for generic card template based on hotelId.
+  like /restaurant/:hotelId
+
+  To extract this id in component another hook is used.
+  - useParams Hook
+  - import { useParams } from "react-router-dom";
+  - const { resId } = useParams();
+
+
 

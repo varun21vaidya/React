@@ -1,8 +1,9 @@
 import fetchData from "./fetchData";
+import loadMoreData from "./LoadMoreData";
 import HotelCard from "./HotelCard";
 import ShimmerContainer from "./ShimmerContainer"
 import { useEffect, useState } from "react";
-
+import { Link } from 'react-router-dom';
 
 
 
@@ -54,13 +55,25 @@ export const Body = () => {
                 <input
                     className="searchbar"></input>
                 </div>
-                <ShimmerContainer />
+                <ShimmerContainer/>
             </div>
         )
     }
+    const ShowMoreData= async () => {
+        setLoading(true)
+        console.log("on scrolling")
+        try {
+            const data = await loadMoreData();
+            const updatedData = [...hotelDataList,...data];
+            setHotelDataList(updatedData);
+            setFilteredList(updatedData);
+        } catch (error) {
+            setError(error.message);
+        }
+    }
 
     return (
-        <div className="body">
+        <div className="body" onScroll={ShowMoreData}>
             <div className="search">
                 <input
                     className="searchbar"
@@ -97,11 +110,16 @@ export const Body = () => {
                 </button>
             </div>
 
+
+
             {/* card container for hotels inforamation */}
             <div className="hotel-card-container">
                 {/* use map instead of array, as react suggests to use functional programming */}
                 {filteredList.map((hotel) => (
-                    <HotelCard hotelData={hotel?.info} key={hotel?.info?.id} />
+                    // key should be on the parent jsx so its put it in link
+                    <Link to={"/restaurant/"+ hotel?.info?.id} key={hotel?.info?.id}>
+                    <HotelCard hotelData={hotel?.info} />
+                    </Link>
                 ))}
             </div>
         </div>

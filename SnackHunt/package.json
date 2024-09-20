@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
   },
   "name": "react",
   "version": "1.0.0",
@@ -17,7 +18,7 @@
     "parcel": "^2.12.0",
     "process": "^0.11.10"
   },
-  "browserlist":[
+  "browserlist": [
     "last 2 versions"
   ],
   "proxy": "https://www.swiggy.com"

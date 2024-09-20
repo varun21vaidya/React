@@ -1,8 +1,10 @@
 import {HOTEL_IMAGE} from '../utils/constants' 
+import { Link } from 'react-router-dom';
 const HotelCard = (resData)=>{
     const {hotelData}= resData;
-    const {name, cuisines, cloudinaryImageId, avgRating, costForTwo,sla} =hotelData
+    const {id, name, cuisines, cloudinaryImageId, avgRating, costForTwo,sla} =hotelData
     return (
+        
         <div className="hotel-card">
         <img src={HOTEL_IMAGE+cloudinaryImageId} className="hotel-card-pic"/>
             <div className='content'>

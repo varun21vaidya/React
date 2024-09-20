@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import logo from '../assets/snackhunt-logo.png';
+import { Link } from 'react-router-dom';
 
 const Header = ()=> {
     
@@ -14,9 +15,9 @@ const Header = ()=> {
         </div>
         <nav id="nav-items" className="nav-items">
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
+                <li><Link to="/" >Home</Link></li>
+                <li><Link to="/about" >About Us</Link></li>
+                <li><Link to="/contact" >Contact Us</Link></li>
                 <li>Cart</li>
                 <li>
                     <button className='login-btn' onClick={toggleBtn}>

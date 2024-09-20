@@ -1,2 +1,5 @@
-export const CDN_URL= "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+export const CDN_URL= "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860";
 export const HOTEL_IMAGE = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const MoreData_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/update"
+export const MoreData_OBJECT = {"lat":"18.61610","lng":"73.72860","nextOffset":"CJhlELQ4KICYttbVwdD/bzCnEzgE","widgetOffset":{"NewListingView_category_bar_chicletranking_TwoRows":"","NewListingView_category_bar_chicletranking_TwoRows_Rendition":"","Restaurant_Group_WebView_SEO_PB_Theme":"","collectionV5RestaurantListWidget_SimRestoRelevance_food_seo":"39","inlineFacetFilter":"","restaurantCountWidget":""},"filters":{},"seoParams":{"seoUrl":"https://www.swiggy.com/","pageType":"FOOD_HOMEPAGE","apiName":"FoodHomePage"},"page_type":"DESKTOP_WEB_LISTING","_csrf":"Nl9sUKBDEzOa-wjsld__X1JMVIGdsBH4GMJa-HUQ"}
+export const RestaurantPage_URL = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.61610&lng=73.72860&restaurantId="
