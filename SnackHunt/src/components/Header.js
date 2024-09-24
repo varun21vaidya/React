@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import logo from '../assets/snackhunt-logo.png';
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Header = ()=> {
     
@@ -8,6 +9,8 @@ const Header = ()=> {
 
     function toggleBtn(){
         loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login")}
+    
+    const currentStatus = useOnlineStatus();
     return (
     <div id="heading" className="header">
         <div id="logo" className="logo">
@@ -15,6 +18,7 @@ const Header = ()=> {
         </div>
         <nav id="nav-items" className="nav-items">
             <ul>
+                <li>Current Status: {currentStatus ? "🟢" : "🔴"}</li>
                 <li><Link to="/" >Home</Link></li>
                 <li><Link to="/about" >About Us</Link></li>
                 <li><Link to="/contact" >Contact Us</Link></li>

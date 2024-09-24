@@ -21,3 +21,16 @@ async function loadMoreData() {
 }
 
 export default loadMoreData;
+
+    // const ShowMoreData= async () => {
+    //     setLoading(true)
+    //     console.log("on scrolling")
+    //     try {
+    //         const data = await loadMoreData();
+    //         const updatedData = [...hotelDataList,...data];
+    //         setHotelDataList(updatedData);
+    //         setFilteredList(updatedData);
+    //     } catch (error) {
+    //         setError(error.message);
+    //     }
+    // }

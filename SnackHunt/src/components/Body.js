@@ -4,34 +4,21 @@ import HotelCard from "./HotelCard";
 import ShimmerContainer from "./ShimmerContainer"
 import { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
-
+import useOnlineStatus from '../utils/useOnlineStatus';
+import useFetchRestaurantPage from "../utils/useFetchRestaurantPage";
+import useFetchRestaurantData from "../utils/useFetchRestaurantData";
 
 
 export const Body = () => {
-    const [hotelDataList, setHotelDataList] = useState([]); //initialize state for hotel data
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const hotelDataList = useFetchRestaurantData() || []; 
     const [filteredList, setFilteredList] = useState([]);
-    // let filteredList = hotelDataList;
 
-    const loadData = async () => {
-        try {
-            const data = await fetchData();
-            setHotelDataList(data);
-            setLoading(false);
-            setFilteredList(data);
-        } catch (error) {
-            setError(error.message);
-            setLoading(false);
-        }
-    };
-
-    useEffect(() => {
-        loadData();
-    }, []); // Empty dependency array ensures this runs only once on component mount
+    if (hotelDataList.length!==0 && filteredList.length===0){
+        setFilteredList(hotelDataList);
+    }
 
     const HandleSearch = (event) => {
-        let tempList;
+        let tempList =[];
         const searchTerm = event.target.value.toLowerCase();
 
         // Reset to original list when input is cleared or backspace/delete
@@ -48,32 +35,29 @@ export const Body = () => {
         setFilteredList(tempList);
     }
 
-    if(loading){
+    const currentStatus = useOnlineStatus()
+    if (currentStatus===false){
+        return (
+            <div>
+                <h1> You are Offline, Please check your Internet Connection</h1>
+            </div>
+        )
+    }
+    if(filteredList.length===0){
         return (
             <div className="body">
-            <div className="search">
-                <input
-                    className="searchbar"></input>
+                <div className="search">
+                    <input
+                        className="searchbar">
+                    </input>
                 </div>
                 <ShimmerContainer/>
             </div>
         )
     }
-    const ShowMoreData= async () => {
-        setLoading(true)
-        console.log("on scrolling")
-        try {
-            const data = await loadMoreData();
-            const updatedData = [...hotelDataList,...data];
-            setHotelDataList(updatedData);
-            setFilteredList(updatedData);
-        } catch (error) {
-            setError(error.message);
-        }
-    }
-
     return (
-        <div className="body" onScroll={ShowMoreData}>
+        <div className="body" >
+            {/* onScroll={ShowMoreData} */}
             <div className="search">
                 <input
                     className="searchbar"
@@ -87,7 +71,7 @@ export const Body = () => {
                     className="filter-btn"
                     onClick={() => {
                         const tempList = filteredList.filter(
-                            (hotel) => hotel?.info?.avgRating <= 4
+                            (hotel) => hotel?.info?.avgRating >= 4
                         );
                         setFilteredList(tempList);
                         console.log("filtered", filteredList);

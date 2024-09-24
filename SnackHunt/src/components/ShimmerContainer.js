@@ -1,4 +1,4 @@
-const ShimmerCard= ()=>{
+export const ShimmerCard= ()=>{
     return (
         <div className="hotel-card" >
              {/* style={{backgroundColor: "#FFFFF"}} */}

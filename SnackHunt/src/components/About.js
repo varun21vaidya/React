@@ -5,7 +5,7 @@ import React from "react";
 const About = ()=>{
 
 
-    useEffect(async()=>{
+    useEffect(()=>{
         const timer = setInterval(()=>{
             console.log("parent interval calls in useEffect");
         }, 1000);

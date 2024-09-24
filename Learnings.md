@@ -706,3 +706,70 @@
       - Because React expects its callback function to either return undefined or
         a cleanup function, not a promise which async returns.
       - async function always returns a promise and useEffect is not designed to handle promise directly.
+
+
+## 9:
+
+  ### How to Optimize App:
+      Use Single Responsiblility Principle:
+      each component should have only one responsiblity.
+      break down the code into reusable, maintainable, testable components.
+
+  ### Custom Hooks:
+
+      Creating custom hook is not mandatory but it makes your code, modular, reusable, maintainable.
+      take out functionality from your component which is not its sole purpose.
+      eg. fetching data is not sole purpose of body or restaurant page, so we took it out
+      and created custom hooks for fetching data and sending to respective compoenents.
+
+      - create it in utils
+      - name the hook starting with "use..."
+      - keep same name as hook
+      - export and use it anywhere
+    
+  ### Lazy Loading / Code Splitting / Dynamic Bundling / Dynamic Import / On Demand Loading / Chunking
+
+      when we develop our app it has so many components, and react makes 1 js file out of it.
+      suppose there are hundreds of components and it will create huge js file, which is unnecessarily big
+      and if user is not going to specific routes its unused code being pulled
+      now with increased size of js, reduces efficiency and performance.
+      so split the js file into bundles according to logical saperations such that
+      each bundle can have multiple childs and according to need each bundle will be fetched.
+
+      so smaller modular bundles can be created ie smaller js files with limited components inside them
+      how to saperate file from main file.
+       
+      inside app.js where you define the children of roots, import your file like this.
+
+      const About = lazy (() => import("./components/About"));
+
+      and when calling children and their component with path,
+        {
+            path:"/about",
+            element: 
+                <About />
+        },
+
+        but the moment you go to the route, react will throw error, because its so fast, that
+        even before file will be fetched, react tries to get the file but could not find it.
+        So use Suspense method from react itself.
+
+        This suspense also has fallback ie default JSX to show until file is fetched and rendered.
+
+        import React, {lazy, Suspense} from "react";
+        {
+            path:"/about",
+            element: 
+                <Suspense fallback={<h1>Loading Screen...</h1>}>
+                <About />
+                </Suspense>
+            
+        },
+
+        Now this will saperate about content from main js file, then when you go to /about
+        it will fetch another js file and render the about component
+        so the main size of js is reduced and efficiency will also be increased when you this for all bundles
+
+        
+
+  
