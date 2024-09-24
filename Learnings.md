@@ -421,23 +421,288 @@
 
   #### Routing in Web Apps:
 
-  1. Server Sie Routing: 
-      When you have /about, in <a> it reloads whole page, sends network call to /about html page, fethes that html, and renders it on UI.
+      1. Server Sie Routing: 
+          When you have /about, in <a> it reloads whole page, sends network call to /about html page, fethes that html, and renders it on UI.
 
-  2. Client Side Routing:
-      We are not making any network calls cz all components are already loaded, we are not fetching page.
+      2. Client Side Routing:
+          We are not making any network calls cz all components are already loaded, we are not fetching page.
 
   #### Dynamic Route:
 
-  Suppose when we click on any card, we want ot get info about that specific hotel card.
-  and get detailed hotel info and menu, offers from it.
-  so for that we need to implement, dynamic route for generic card template based on hotelId.
-  like /restaurant/:hotelId
+      Suppose when we click on any card, we want ot get info about that specific hotel card.
+      and get detailed hotel info and menu, offers from it.
+      so for that we need to implement, dynamic route for generic card template based on hotelId.
+      like /restaurant/:hotelId
 
-  To extract this id in component another hook is used.
-  - useParams Hook
-  - import { useParams } from "react-router-dom";
-  - const { resId } = useParams();
+      To extract this id in component another hook is used.
+      - useParams Hook
+      - import { useParams } from "react-router-dom";
+      - const { resId } = useParams();
+
+
+## 8:
+  ## Class Based Components:
+
+      As functional components are just javascript functions, class components are javascript classes.
+      
+      class About extends React.Component{
+        render(){return (<div></div>)}
+      }
+
+      How to Recieve props in class based componenets?
+      with Constructor !!
+
+      constructor (props){
+        super(props) // this is must
+      }
+
+  ### why super(props)?
+
+      Basically it allows accessing this.props in a constructor function, infact super() calls the constructor of the parent class ie React.Component, Without this the component cannot inherit the behaviour methods of React.Component.
+
+      if super() is not called, component cannot access the lifecycle methods and importantly "this", as without super(), this will not be defined and trying to access this.props will result in error.
+
+      Now by passing the current props to super(props) it ensures that the React.Component constructor recieve current props
+      and initialize them withint that parent class, so this.props will be available throughout the lifecycle.
+
+      Now to access properties from other component passed with props in render, 
+      you can use this.props.name to get value directly.
+
+  ## State Variables in Class Based Components:
+
+      - class based components have 1 big object to maintain state. 
+      - So instead of writing 2-3 state variable objects, all variables of state will be under 1 object
+      - Use inside constructor.
+
+        this.state = {
+            count: 0,
+            count2: 10
+        }
+        Even in functional compnent react uses object to maintain state but the logic is not same with class based component exactly.
+
+        Why Inside the Constructor?
+          - States were created when instance of class was created.
+          - ie when you load component, you are making instance of classand giving props.
+          - So its best to recieve props and create states here.
+
+
+  ### Update State Variable:
+
+      - Never update state variable directly, ie this.state.count + = 1
+      - React gives access to 
+      - this.setState({count: this.state.count+1})
+      - This setState takes an object and this object will contain updated value of your variable.
+      - After this react wil re-render the component and update the value.
+      - if you need to update multiple values, update in same object of setState.
+
+      Behind the Scenes:
+
+        Suppose you are updating values onClick button.
+        button was clicked -> this.setState called -> react takes object (only updates state variables that were in object others not touched)
+        -> retrigger concilliation event -> get difference of objects -> update state variable -> re-render component
+      
+  ### Lifecycle Methods and Execution Process :
+
+      - When parent component is mounted on web page, first constructor is loaded, and then render is called.
+      - now it starts rendering JSX and it came across child class component.
+      - takes child class from import 
+      - starts to load child class now
+      - new instance of class created 
+      - first when class loads constructor is called
+      - then render is called
+
+  
+      Mounting Cycle
+        |
+      Constructor(dummy Data)
+        |
+      Render (dummy Data)
+        - render happens with default values of state variables
+        | 
+      Updates Actual DOM
+        |
+      ComponentDidMount() - will load after rendering compoenent in mounting cycle
+        - API Call
+        - this.setState - updates state variable
+        |
+      Mounting Cycle Finished
+
+
+      Update Cycle
+        |
+      Component Re-Renders due to setState
+        | 
+      Updates Actual DOM 
+        |
+      ComponentDidUpdate() - called after compnent re-renders and get updated set state
+        |
+      Update Cycle Continues until Component is removed / unmounted
+
+
+      UnMounting Pahse
+        |
+      ComponentWillUnmount() - called just before unmounting ie component removing from DOM
+        | 
+      Component removed from DOM
 
 
 
+  #### ComponentDidMount():
+      this will run after component has been rendered.
+
+      Why its used? To Make API calls.
+      ie react first renders the UI skalaton, then calls the API, and then re-renders with updated data.
+      thats why after dummy UI is rendered, api calls takes place in ComponentDidMount() and rerenders component.
+
+      so always contructor -> then render - > component did mount.
+      parent constructor 
+      parent render       // now parent will load child component but its not finished rendering
+        First  user class constructor 
+        First  user class render
+        First  user class component did mount // child will render fully
+      parent compoenent did mount 
+
+      After everything in child component has loaded then parent compnent will be called.
+      
+  ##### Optimization by React for Multiple Childs:
+
+      What about Multiple children in parent
+
+        parent constructor
+        parent render
+          First  user class constructor
+          First  user class render
+          Second user class constructor
+          Second user class render
+          Third user class constructor
+          Third user class render
+          First  user class component did mount
+          Second user class component did mount
+          Third user class component did mount
+        parent compoenent did mount
+
+      - But incase of multiple child classes, REACT optimises the cycle
+      - completes Constructor and renders process of all children ie Render Phase
+      - then REACT updates the actual DOM and quickly dummy UI is rendred 
+      - then component did mount is called.
+      - Now as react wants to quickly render the UI, it will batch render phase of child components
+      - Why? because updating actual DOM is very expensive process,
+      - and when we want to Render UI from virtual DOM to actual DOM, for every component DOM manipulation needs to be considered
+      - so DOM manipulation for each component saperatly is huge toll, so thats why it batches them in virtaul dom only
+      - then whole changed UI in virtual dom is then directly updated in actual DOM together of all component changes.
+      - So it batches all child changes in render phase and then update actual DOM 
+      - then all ComponentDidMount executes for all childs
+      - then ComponentDidMount for parent as all childs are rendered and parent is also fully rendered now.
+
+   #### How to use ComponentDidMount():
+
+      make it async !
+
+        async componentDidMount(){
+          const data  = await fetch("https://api.github.com/users/varun21vaidya");
+          const json = await data.json()
+          console.log("got user data");
+          this.setState({userInfo: json})
+        }     
+
+  Remeber Never Compare Life Cycle to Functional Components
+
+  #### How to use ComponentDidUpdate():
+
+      componentDidUpdate(prevProps, prevState) {
+        if (this.state.count1 !== prevState.count1) {
+          // Perform some action based on the change
+        }
+      }
+      now if you need to change multiple state variables with different results,
+      for each variable you need to write different condition
+
+  #### How to use ComponentWillUnmount():
+
+
+  ##### Issue of Single Page Application:
+      - this is called when leaving the component
+      - this is used for cleanup like setTimeout, setInterval timers
+      - cz if you have used them in componentDidMount(),
+        everytime it will create new instance when you come to the component
+      - EVEN if you leave the component it will create another instance of the timer and still run in background
+      - This happens even if you switched other components, still it will create new instance of timers from old component
+      - WHY? cz its single page application, yes one the disadvantage of it.
+      - and old compnent never
+      - thus its important to clear those timers in ComponentWillUnmount()
+
+          componentDidMount(){
+              this.timer = setInterval(()=> {console.log("parent Interval calls")}, 1000);
+              console.log("parent compoenent did mount");
+          }
+            Suppose parent component has child component as well which fetches data and shows on parent component
+
+            - parent constructor 
+            - parent render 
+               - First  child class constructor
+               - First  child class render
+               - First  child class component did mount
+            - parent compoenent did mount 
+              - got user data (from child component from mount())
+              - First  user class render
+              - child - component Did Update
+            - parent Interval calls 125 (continued till we left the component)
+            
+            --component switched--
+            - parent compoenent will unmount
+              - child - component will unmount 
+            - parent Interval calls 96 (continuing even after leaving the component)
+
+
+          - if you switch to other components it will stop previous instances create new instances everytime As its single Page Application.
+          - Observe here first parent component will unmount then child component will unmount
+
+          componentWillUnmount(){
+              clearInterval(this.timer);
+              console.log("parent compoenent will unmount");
+          }
+
+          after this it will not call last parent Interval calls 96
+
+  ##### Same Issue happens with useEffect():
+
+      if we use setInterval or such timers in functional component it will behave same.
+      Solution? : Use Return Statement
+
+      useEffect( ()=>{
+        const timer = setInterval(()=>{
+            console.log("parent interval calls in useEffect");
+        }, 1000);
+        console.log("parent use effect used")       
+
+        return ()=>{
+            clearInterval(timer);
+            console.log("parent use effect return")
+        }
+      }, [])
+
+
+      Use Effect Return will only Be called when you leave the component
+
+          child class child - component constructor
+          child class user class render
+          child class child - component did mount
+        parent use effect used
+          got user data
+          child class user class render
+          child - component Did Update
+        parent interval calls in useEffect 2
+
+          --component switched--
+          child - component will unmount
+        parent use effect return
+
+      - Here Child component will unmount then parent component will be returned
+
+  ##### Why we cant use async with useEffect callback:
+      you can use async componentDidMount() but if you use useEffect(async()=>{
+      you will get warning, Why?
+
+      - Because React expects its callback function to either return undefined or
+        a cleanup function, not a promise which async returns.
+      - async function always returns a promise and useEffect is not designed to handle promise directly.
