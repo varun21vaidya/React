@@ -12,17 +12,19 @@ const Header = ()=> {
     
     const currentStatus = useOnlineStatus();
     return (
-    <div id="heading" className="header">
-        <div id="logo" className="logo">
-            <img src={logo} className="logo"/>
+
+
+    <div id="heading" className="header flex justify-between bg-red-500">
+        <div id="logo" className="logo-container">
+            <Link to="/" ><img src={logo} className="logo w-44"/></Link>
         </div>
-        <nav id="nav-items" className="nav-items">
-            <ul>
-                <li>Current Status: {currentStatus ? "🟢" : "🔴"}</li>
-                <li><Link to="/" >Home</Link></li>
-                <li><Link to="/about" >About Us</Link></li>
-                <li><Link to="/contact" >Contact Us</Link></li>
-                <li>Cart</li>
+        <nav id="nav-items" className="nav-items flex items-center text-base text-white font-bold">
+            <ul className='flex p-4 m-4'>
+                <li className='px-4'>Current Status: {currentStatus ? "🟢" : "🔴"}</li>
+                <li className='px-4'><Link to="/" >Home</Link></li>
+                <li className='px-4'><Link to="/about" >About Us</Link></li>
+                <li className='px-4'><Link to="/contact" >Contact Us</Link></li>
+                <li className='px-4'>Cart</li>
                 <li>
                     <button className='login-btn' onClick={toggleBtn}>
                         {loginBtn}

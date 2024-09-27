@@ -58,46 +58,47 @@ export const Body = () => {
     return (
         <div className="body" >
             {/* onScroll={ShowMoreData} */}
-            <div className="search">
-                <input
-                    className="searchbar"
-                    placeholder="Search Restaurants"
-                    onKeyUp={HandleSearch}
-                ></input>
+            <div className="flex items-center ">
+                <div className="search m-4 p-4 shadow-sm border-spacing-5">
+                    <input
+                        className="searchbar w-80 p-2 border border-solid border-black"
+                        placeholder="Search Resturants"
+                        onKeyUp={HandleSearch}
+                    ></input>
+                </div>
+
+                <div className="filter px-4">
+                    <button
+                        className="filter-btn px-4 py-2 bg-pink-50"
+                        onClick={() => {
+                            const tempList = filteredList.filter(
+                                (hotel) => hotel?.info?.avgRating >= 4
+                            );
+                            setFilteredList(tempList);
+                            console.log("filtered", filteredList);
+                        }}
+                    >
+                        Top Rated Restaurants
+                    </button>
+                </div>
+
+                <div className="filter-btn px-4 py-2 bg-pink-50">
+                    <button
+                        className="filter-btn"
+                        onClick={() => {
+                            setFilteredList(hotelDataList);
+                            console.log("filter reset", filteredList);
+
+                        }}
+                    >
+                        Reset Filter
+                    </button>
+                </div>
+
             </div>
-
-            <div className="filter">
-                <button
-                    className="filter-btn"
-                    onClick={() => {
-                        const tempList = filteredList.filter(
-                            (hotel) => hotel?.info?.avgRating >= 4
-                        );
-                        setFilteredList(tempList);
-                        console.log("filtered", filteredList);
-                    }}
-                >
-                    Top Rated Restaurants
-                </button>
-            </div>
-
-            <div className="filter">
-                <button
-                    className="filter-btn"
-                    onClick={() => {
-                        setFilteredList(hotelDataList);
-                        console.log("filter reset", filteredList);
-
-                    }}
-                >
-                    Reset Filter
-                </button>
-            </div>
-
-
 
             {/* card container for hotels inforamation */}
-            <div className="hotel-card-container">
+            <div className="hotel-card-container flex flex-wrap">
                 {/* use map instead of array, as react suggests to use functional programming */}
                 {filteredList.map((hotel) => (
                     // key should be on the parent jsx so its put it in link

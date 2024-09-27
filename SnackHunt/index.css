@@ -1,4 +1,4 @@
-.header{
+/* .header{
     display: flex;
     justify-content: space-between;
     border: solid 1px black;
@@ -71,4 +71,8 @@
 .login-btn{
     padding: 10px 20px;
     cursor: pointer;
-}
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
