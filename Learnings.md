@@ -771,5 +771,173 @@
         so the main size of js is reduced and efficiency will also be increased when you this for all bundles
 
         
+## 10: 
+  ### Styling Your App:
+
+      - SaSS, SCSS - superpowers to css
+      - Styled Components - used in some big orgs
+      - Frameworks - Has prebuilt components -  Material UI, Bootstrap, Chakra UI, ant.design
+
+      PostCSS - Tailwind Uses behind the scenes, to transform css inside the javascript
+      as you need to use .postsrc to read tailwind
+
+  ##### Cons of Tailwind:
+      - Makes JS look ugly
+      - too many inline classes makes code unreadable
+      - sometimes you need to repeat classes much more times  unnecessarily
+
+  ##### Advantages of Tailwind CSS:
+
+      - Tailwind is lightweight
+      - Makes css development easy and good to go while writing HTML itself.
+      - When parcel make bundle of css, suppose our application is using 100 classes,
+        but tailwind library has thousands of classes, still it will only include those that we have used
+        on our webpage when compiling process.
+      - If in one file m-4 is used 100 times, still it would include it only once.
+      - In regular css, working with various component, by various developers, they create duplicate 
+        and redundant classes, adopting to tailwind, reduces that, so develpers adopt certain way to give styles.
+
+## 11:
+  ### Higher Order Components:
+      Higher Order Components is a function that takes existing component and enhances it and returns back a new component.
+
+      Higher order functions are pure functions.
+
+      const export EnhancedComponent = (card)=>{
+
+        // props given to component and it returns new component 
+        return (props)=>{
+          return (
+            <div>
+              some new enhancement
+              // use props to send data to og card component
+              <card {...props}></card>
+            </div>
+          )
+        }
+      }
+
+      now where you will be calling this new card component
+      create new card component by calling it as this function
+      // Higher Order Component calls Higher order component function 
+      // which returns a component with closest label by taking hotel card
+      const ClosestHotelCard = closestLabel(HotelCard)
+
+      you can then use this card,
+      {condition ?  <ClosestHotelCard hotelData={hotel?.info}/> : <HotelCard hotelData={hotel?.info} />}
+      
+      Here you are not modifying og component, you are only adding new enhancement to component.
+      Higher Order components add new feature to exisiting functionality and return new component.
+
+
+  ### Controlled Component:
+
+      - UI layer - JSX
+      - Data Layer - JS code in {}, states, Props, data
+
+      Suppose there are multiple components with accordian
+      when we click on component -> onclick it chnages state (!showItems) -> It enables / disables list of items
+      But we need to modify so that when we click on component, it should expand but close other components
+
+      so we cant change this internally from child component. we should control expanding fom parent component
+      so when we click on child, state of other componenets should change. to showItems = false
+
+      SO we are passing the control to parents -> child components become Controlled Components
+
+      - If child component is controlling itself, it is uncontrolled component.
+      - If child component is controlled by parent, it is controlled component.
+      
+      How to do? we can send setChangeState which changes showItems state from parents to child in arrow function.
+
+      <child changeStateFn={()=> setChangeState(index of compoent)}>
+      now inside child when you click on div, call the setChangeState which will change state from inside child and 
+      affect parent of other childs and this child
+       
+      handleClick(){
+        changeStateFn()
+      }
+
+  #####    THIS IS LIFTING STATE UP
+
+  ### Props Drilling:
+
+      When react project grows big, passing data between components is big challange, 
+      React has 1 way data flow, parents to children.
+
+      Suppose you want to pass data inside hotel menu from top to last children in hierarchy
+      hotelmenu -> child -> grand child - > supergrandchild
+
+      but should you really need to pass that data to each child which will pass to its own child
+      and at the end it will reach last child.
+      Its not good way, because middle components are not even using that data
+
+      THIS IS PROPS DRILLING. 
+
+      there are many ways to resolve props drilling, context is one of the way.
+
+  ### Context: 
+
+      React provides - Context - global kind of object outside components (not exactly global object)
+
+      eg. logged In , dark theme toggle.
+
+      createContext: to create context outside components in file
+
+        import { createContext } from "react";
+
+        const UserContext = createContext({
+            loggedInUser : "Default User"
+        });
+
+        export default UserContext;
+
+
+  ##### useContext: Accessing Component in functional Components
+
+        const {loggedInUser} = useContext(UserContext);
+
+        you can have as many contexts.
+        
+        Only Data needs to be accessed in multiple components should be used as context.
+
+
+  ##### UserContext.Consumer: Accessing Component in Class Components
+
+        // inside UserContext.Consumer you need to have js {} inside which have callback function {()=>}
+        // this takes required context ({loggedInUser}) and returns jsx => (<h1></h1>)
+        <UserContext.Consumer>
+          // takes callback function
+          {({loggedInUser})=>
+              (<h1>The user is {loggedInUser}</h1>)
+          }
+        </UserContext.Consumer>
+
+  ##### UserContext.Provider: Modify Context
+
+        Wrap usercontext on app so we can use loggedInUser in entire app anywhere and 
+        it will change default value given in create context.
+
+        If you wrap it onllly on header, it will cange only for header and at remaining places
+        in app, it will be modified userName only. 
+
+          <UserContext.Provider value={{loggedInUser: userName, setUserName}} >
+            <div className="app">
+                <UserContext.Provider value={{loggedInUser: "Kavtya Mahakal"}} >
+                    <Header />
+                </UserContext.Provider>
+                
+                <Outlet />
+            </div>
+          </UserContext.Provider>
+
+        you can even send setUserName to userContext so you can update it from any component
+        
+  you can use context for small and mid sized applications easily, for more large size projects
+  you can use precise state management libraries like redux.
 
   
+
+
+
+
+

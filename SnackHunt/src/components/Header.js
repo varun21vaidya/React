@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import logo from '../assets/snackhunt-logo.png';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
+import UserContext from '../utils/UserContext';
 
 const Header = ()=> {
     
@@ -11,6 +12,8 @@ const Header = ()=> {
         loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login")}
     
     const currentStatus = useOnlineStatus();
+
+    const {loggedInUser} = useContext(UserContext);
     return (
 
 
@@ -25,12 +28,17 @@ const Header = ()=> {
                 <li className='px-4'><Link to="/about" >About Us</Link></li>
                 <li className='px-4'><Link to="/contact" >Contact Us</Link></li>
                 <li className='px-4'>Cart</li>
+
                 <li>
-                    <button className='login-btn' onClick={toggleBtn}>
+                    <button className='login-btn px-4' onClick={toggleBtn}>
                         {loginBtn}
                     </button>
                 </li>
+                <li>
+                    {loggedInUser}
+                </li>
             </ul>
+
         </nav>
     </div>
 )}

@@ -1,17 +1,25 @@
 import fetchData from "./fetchData";
 import loadMoreData from "./LoadMoreData";
-import HotelCard from "./HotelCard";
+import HotelCard, {closestLabel} from "./HotelCard";
 import ShimmerContainer from "./ShimmerContainer"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import useFetchRestaurantPage from "../utils/useFetchRestaurantPage";
 import useFetchRestaurantData from "../utils/useFetchRestaurantData";
+import UserContext from "../utils/UserContext";
 
 
 export const Body = () => {
     const hotelDataList = useFetchRestaurantData() || []; 
     const [filteredList, setFilteredList] = useState([]);
+
+    // Higher Order Component
+    // calls Higher order component function which returns a component with closest label by taking hotel card
+    const ClosestHotelCard = closestLabel(HotelCard)
+
+    // Context
+    const {loggedInUser, setUserName} = useContext(UserContext)
 
     if (hotelDataList.length!==0 && filteredList.length===0){
         setFilteredList(hotelDataList);
@@ -82,7 +90,7 @@ export const Body = () => {
                     </button>
                 </div>
 
-                <div className="filter-btn px-4 py-2 bg-pink-50">
+                <div className="filter-btn px-4 py-2 bg-pink-50 border border-black">
                     <button
                         className="filter-btn"
                         onClick={() => {
@@ -95,6 +103,9 @@ export const Body = () => {
                     </button>
                 </div>
 
+                <div>
+                    <input className="px-4 py-2 bg-pink-50" placeholder="Change User Name" value={loggedInUser} onChange={(e)=> setUserName(e.target.value)}></input>
+                </div>
             </div>
 
             {/* card container for hotels inforamation */}
@@ -103,7 +114,10 @@ export const Body = () => {
                 {filteredList.map((hotel) => (
                     // key should be on the parent jsx so its put it in link
                     <Link to={"/restaurant/"+ hotel?.info?.id} key={hotel?.info?.id}>
-                    <HotelCard hotelData={hotel?.info} />
+
+                    {/* If hotel is closest, we will add a lable for closest on the card */}
+                    {hotel?.info?.sla?.lastMileTravel <= 3 ? <ClosestHotelCard hotelData={hotel?.info}/> : <HotelCard hotelData={hotel?.info} />}
+                    
                     </Link>
                 ))}
             </div>

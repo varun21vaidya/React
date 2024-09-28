@@ -16,4 +16,18 @@ const HotelCard = (resData)=>{
         </div>
     )
 }
+
+// higher order component
+// takes HotelCard, and gives new component card with closest label 
+export const closestLabel = (HotelCard)=>{
+    // it returns new component 
+    return (props)=>{
+        return (
+            <div>
+                <label className='absolute bg-black text-white px-2 flex items-center rounded-md'>Closest</label>
+                <HotelCard {...props} />
+            </div>
+        )
+    }
+}
 export default HotelCard;
