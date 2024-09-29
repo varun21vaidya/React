@@ -5,7 +5,7 @@ const Accordian = (props)=>{
     // to make this accordian controlled component so it can be expanded from parent send showItems from parent only 
     // instead of changing states here.
     const {data, showItems, setExpandFn} = props;
-    const title= data?.card?.card?.title, itemsList= data?.card?.card?.itemCards
+    const title= data?.card?.card?.title, itemsList= data?.card?.card?.itemCards.map((eachDish)=>eachDish?.card?.info)
 
 
     // use state to change expansion of card based on handleclick

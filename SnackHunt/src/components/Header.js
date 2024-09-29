@@ -3,6 +3,7 @@ import logo from '../assets/snackhunt-logo.png';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
 
 const Header = ()=> {
     
@@ -11,9 +12,14 @@ const Header = ()=> {
     function toggleBtn(){
         loginBtn === "Login" ? setLoginBtn("Logout") : setLoginBtn("Login")}
     
+    // get status from custom hook
     const currentStatus = useOnlineStatus();
 
+    // get context for logged User
     const {loggedInUser} = useContext(UserContext);
+
+    const cartItems = useSelector((store)=> store.cart.items);
+    console.log("cart items",cartItems);
     return (
 
 
@@ -27,7 +33,7 @@ const Header = ()=> {
                 <li className='px-4'><Link to="/" >Home</Link></li>
                 <li className='px-4'><Link to="/about" >About Us</Link></li>
                 <li className='px-4'><Link to="/contact" >Contact Us</Link></li>
-                <li className='px-4'>Cart</li>
+                <li className='px-4'><Link to="/cart" >Cart ({cartItems.length})</Link></li>
 
                 <li>
                     <button className='login-btn px-4' onClick={toggleBtn}>

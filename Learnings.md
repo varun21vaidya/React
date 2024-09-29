@@ -939,5 +939,194 @@
 
 
 
+## 12: 
+
+  ### Redux 
+      first of all its not mandatory.
+      It is predictable state container for javascript apps
+
+      Two Libraries:
+      - React-Redux - It is bridge between react and redux.
+      - Redux toolkit (RDK) - In older day we used to have different way to write redux (Vanilla Redux).
+        This toolkit is new way to write now and more standerdized redux.
+        
+  ##### There were 3 problems with old redux
+      1. Configuration was too complicated (Huge learning curve).
+      2. needed to add lot of packages, now just redux toolkit and react-redux is enough.
+      3. Redux required too much boilerplate code.
+
+      Redux is big object kept in global central place, any react component can read write from this.
+      Is it good to keep very big data in big object ? yes its fine.
+      But to not make our redux store clumsy we have slices in redux store.
+      slices are logical partition, like one for cart, one for loggedInInfo, another for dark time.
+
+  #### Writing Data in Redux:
+
+      Redux says you cant change your data directly.
+      When you click add button -->
+        It dispatches an action -->
+          It calls a reducer function -->
+            reducer function modifies cart -->
+              updates slice of redux store.
+
+  #### Reading Data from Redux:
+
+      We use a selector to read data from store. 
+      
+        You fetch data from slice through selector -->
+          ie selector subscribe to slice and get data --> 
+            selector then updates the cart
+
+      So basically you subscribe to cart slice using selector and
+      it automatically update cart directly.
+
+      Add --dispatches--> Action --calls--> reducer function --> | Slice |
+
+            Cart <--Subscribes to store using--> <--Selector --> | Slice |
+
+  #### Steps:
+      1. Install redux toolkit -> npm i @reduxjs/toolkit
+      2. Install react-redux -> npm i react-redux
+      3. Build appStore (redux store where you will configure and store reducers)
+      4. Create Slice (create as many slices like cartSlice, LoginSlice) and create reducers functions
+      5. for modifying data use Dispatchers (useDispatcher hook)
+      6. for reading data use Selectors (useSelector hook)
 
 
+  ##### Configure redux store:
+
+    - Configure in new file and add reducer which will be use slice reducers.
+
+      import {configureStore, createReducer} from "@reduxjs/toolkit"
+      import cartReducer from '../utils/cartSlice';
+
+      const appStore = configureStore({
+          reducer:{
+              cart: cartReducer
+          }
+      })
+      export default appStore;
+
+  ##### Wrap Provider over entire app or specific part:
+
+    - Provider for redux store, if you want redux over only specific part wrap it only on that part
+    - Can be wrapped over Context.Provider
+      
+      import {Provider} from 'react-redux';
+
+      <Provider store={appStore}>
+          <div className="app">
+          </div>
+      </Provider>
+
+  ##### Create Slice:
+
+    - name is used during subscribing with selector
+    - notice initial state as default state
+    - can have as many reducer functions
+    - each reducer function take state and optional actions.payload
+    - when you mutate state, the payload that you give comes directly as actions.payload
+    - there will be 2 exports one for each reducer function to use with action dispatcher
+    - and other for configure reducer
+
+    - When you createSlice it will return object in cartSlice
+    - This object will have actions and reducer
+
+
+      import { createSlice } from "@reduxjs/toolkit";
+
+      const cartSlice = createSlice({
+          name: 'cart',
+          initialState:{
+              items: []
+          },
+          reducers: {
+              addItems: (state,action)=> {
+                  state.items.push(action.payload)
+              },
+              removeItem: (state)=>{
+                  state.items.pop()
+              },
+              clearCart: (state)=>{
+                  state.items.length = 0
+              }
+          }
+      });
+
+      export const {addItems, removeItem, clearCart} = cartSlice.actions;
+
+      export default cartSlice.reducer;
+
+  ##### Dispatch Action to mutate state
+
+      - you need to import useDispatch hook
+      - now on click event you can call function which will take call back as item 
+        and dispatch action event with reducer function
+      - what ever you pass as item in addItems(...) it will go as action.payload which will go inside reducer function
+        whihc will update the state items.
+
+        import { useDispatch } from "react-redux"; 
+
+        const dispatch = useDispatch()
+        handleAddItems = (item)=>{
+            dispatch(addItems(item));
+        }
+
+  ##### Subscribe store with Selector to fetch data
+
+    - to fetch data by subscribing to store using useSelector hook
+    - it takes callback function with store, then use slice name with exact location of store
+    - do not use generic store location as it is constantly subscribed to store, so use specific location.
+    
+    - useSelector gives access to store but callback function gives specific portion of store.
+    - now as we subscribed to items, whenever items in that appstore changes we will get update value in cartItems.
+
+      import { useDispatch, useSelector } from "react-redux";
+
+      const cartItems = useSelector((store) => store?.cart?.items);
+
+
+    Import differences:
+
+    import {configureStore, createReducer,createSlice} from "@reduxjs/toolkit"
+    import { Provider, useDispatch, useSelector } from "react-redux"; 
+
+
+  ##### Important Things to notice for interviews:
+
+    - For selectors use exact location of your items, as it has huge performance benifit.
+
+    - Reducer - one big reducer in app store which contains reducer functions of slice
+    - reducers - multiple reducer functions in any slice, but when exporting it will be 
+                export default cartSlice.reducer;
+
+    - In vanila version it didnot allow to mutate state and we used to return the new state.
+      Return was must
+      const newState = [...state] //shallow copy
+      newState.items.push(action.payload)
+      return newState;
+
+    - Now with redux toolkit we have to mutate state and return is not mandatory.
+      state.items.push(action.payload)
+
+    - Redux still maintains its immutable state nature behind the scenes using immer library.
+      so immer finds difference between immutable state and mutable state and gives you new copy of immutable state.
+      Immer is a tiny package which allows you to work with immutable state in easy way
+
+    - thats why we have to mutate state thats why it doesnot allow, in clearCart
+
+      state.items=[]
+      this does not work as it replaces items array with new array ie adds new reference
+      This breaks the immers tracking as its saperate from old reference and doesnot change anything.
+
+      but with state.items.length = 0 ;
+      It mutates existing array.
+
+    - When to Use Redux: when there are thousands of componennts and many are mutating state, and you need to manage them all.
+      To track these changes use redux dev tools
+
+    - In older vanilla redux there were middlewares and thungs for asynchronous operations.
+      basically you want to make api call and want to store data in redux store.
+      there was data pattern which used these middleware and thungs.
+
+      Now it uses RTK (React tool kit) query ie RTKquery, its way of fetching data.
