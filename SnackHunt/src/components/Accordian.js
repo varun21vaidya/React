@@ -17,7 +17,7 @@ const Accordian = (props)=>{
     }
 
     return (
-        <div className="flex text-center flex-col bg-gray-50 w-6/12 m-auto">
+        <div data-testid="accordian" className="flex text-center flex-col bg-gray-50 w-6/12 m-auto">
             <div className="flex justify-between items-center py-2 px-6 shadow-lg cursor-pointer" onClick={handleClick}>
                 <span className="header font-bold ">{title} ({itemsList.length})</span> 
                 <span>🔻</span>

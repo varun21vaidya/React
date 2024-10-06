@@ -1,0 +1,42 @@
+name KFC  -  Dattwadi
+name McDonald's  -  Hinjewadi
+name Burger King  -  Suratwala
+name MOJO Pizza - 2X Toppings  -  Infotech Park
+name Pizza Hut  -  Hinjewadi
+name Daily Kitchen - Homely Meals  -  Village Marunji
+name LeanCrust Pizza- ThinCrust Experts  -  Village Marunji
+name WeFit - Protein Bowls, Salads & Sandwiches  -  Mulshi
+name NH1 Bowls - Highway To North  -  Village Marunji
+name ZAZA Mughal Biryani  -  Marunji
+name Wow! Momo  -  GHS
+name NIC Ice Creams  -  Maan Road
+name Mealful Rolls - India's Biggest Rolls  -  Village Marunji
+name Oven Story Pizza - Standout Toppings  -  Bhatewara nagar
+name Bhatti Chicken - Grilled, NOT Fried!  -  Marunji
+name GLOBO Ice Creams Of The World  -  Village Marunji
+name Hola Pasta - Fresh Gourmet Pasta  -  Village Marunji
+name BOOM Sandwich - Sub of India  -  Village Marunji
+name Itminaan Matka Biryani - Slow Cooked  -  Village Marunji
+name Kwality Walls Ice Cream and More  -  Marunji
+
+
+name Subway  -  KAILASH HOTEL 2 
+name Kwality Walls Ice Cream and More  -  Marunji 2 
+name KFC  -  Dattwadi 2 
+name The Belgian Waffle Co.  -  2nd Phase 2 
+name Burger King  -  Tathawade 2 
+name Navratri Meals by LunchBox  -  Bhatewara nagar 2 
+name McDonald's  -  W Biz 2 
+name WeFit - Protein Bowls, Salads & Sandwiches  -  Mulshi 2 
+name Daily Kitchen - Homely Meals  -  Village Marunji 2 
+name Wow! China  -  GHS 2 
+name Great Indian Khichdi by EatFit  -  Wakd road 2 
+name Ghar Ka Khana - Since 2005  -  Hinjewadi 2 
+name NH1 Bowls - Highway To North  -  Village Marunji 2 
+name Theobroma  -  Near HP Pump 2 
+name Faasos - Wraps, Rolls & Shawarma  -  Bhatewara nagar 2 
+name La Pino'z Pizza  -  Hinjewadi 2 
+name LunchBox - Meals and Thalis  -  Bhatewara nagar 2 
+name Pizza Hut  -  Hinjewadi 2 
+name Pind Punjab  -  Hinjewadi 2 
+name The Good Bowl  -  Bhatewara nagar 2 

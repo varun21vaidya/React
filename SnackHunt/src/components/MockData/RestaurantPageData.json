@@ -1,0 +1,1652 @@
+{
+  "statusCode": 0,
+  "data": {
+    "statusMessage": "done successfully",
+    "cards": [
+      {
+        "card": {
+          "card": {
+            "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.TextBoxV2",
+            "text": "Kwality Walls Ice Cream and More",
+            "headerStyling": {
+              "textColor": "text_Highest_Emphasis",
+              "textVariant": "header_H3_Black"
+            }
+          }
+        }
+      },
+      {
+        "card": {
+          "card": {
+            "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.RestaurantBlTab",
+            "tabs": [{ "id": "Order Online", "title": "Order Online" }]
+          }
+        }
+      },
+      {
+        "card": {
+          "card": {
+            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
+            "info": {
+              "id": "331881",
+              "name": "Kwality Walls Ice Cream and More",
+              "city": "Pune",
+              "slugs": {
+                "restaurant": "kwality-walls-frozen-dessert-and-ice-cream-shop-hinjewadi-hinjewadi",
+                "city": "pune"
+              },
+              "uniqueId": "e51e6528-4859-48c8-8fed-e84c17dc2d76",
+              "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/6/13/decf499f-1408-4f67-9e38-26072b2fe760_331881.JPG",
+              "locality": "Marunji",
+              "areaName": "Hinjawadi",
+              "costForTwo": "30000",
+              "costForTwoMessage": "₹300 for two",
+              "cuisines": ["Desserts", "Ice Cream"],
+              "avgRating": 4.7,
+              "veg": true,
+              "feeDetails": {
+                "restaurantId": "331881",
+                "fees": [
+                  { "name": "TYPE_DISTANCE", "fee": 2900 },
+                  { "name": "TYPE_TIME" }
+                ],
+                "totalFee": 2900,
+                "title": "Delivery Charge",
+                "amount": "2900",
+                "icon": "v1648635511/Delivery_fee_new_cjxumu",
+                "message": "<b>1.7 kms</b> | ₹29 Delivery fee will apply"
+              },
+              "parentId": "582",
+              "avgRatingString": "4.7",
+              "totalRatingsString": "337 ratings",
+              "sla": {
+                "restaurantId": "331881",
+                "deliveryTime": 28,
+                "minDeliveryTime": 25,
+                "maxDeliveryTime": 30,
+                "lastMileTravel": 1.7,
+                "serviceability": "SERVICEABLE",
+                "stressFactor": 1,
+                "rainMode": "RAIN_MODE_NONE",
+                "longDistance": "LONG_DISTANCE_NOT_LONG_DISTANCE",
+                "zoneId": 89,
+                "slaString": "25-30 MINS",
+                "lastMileTravelString": "1.7 km",
+                "iconType": "ICON_TYPE_EMPTY"
+              },
+              "availability": {
+                "nextCloseTime": "2024-10-06 22:50:00",
+                "visibility": true,
+                "opened": true,
+                "restaurantClosedMeta": {}
+              },
+              "aggregatedDiscountInfo": {
+                "header": "Flat ₹100 off",
+                "shortDescriptionList": [
+                  {
+                    "meta": "Flat ₹100 off on orders above ₹349",
+                    "discountType": "Flat",
+                    "operationType": "RESTAURANT"
+                  },
+                  {
+                    "meta": "50% off | Use SPECIALS",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                  }
+                ],
+                "descriptionList": [
+                  {
+                    "meta": "Flat ₹100 off on orders above ₹349 | Use code FLAT100",
+                    "discountType": "Flat",
+                    "operationType": "RESTAURANT"
+                  },
+                  {
+                    "meta": "50% off up to ₹100 on select items | Use code SPECIALS",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                  }
+                ],
+                "visible": true
+              },
+              "badges": {},
+              "slugString": "kwality-walls-frozen-dessert-and-ice-cream-shop-hinjewadi-hinjewadi",
+              "multiOutlet": true,
+              "isOpen": true,
+              "labels": [
+                { "title": "Timings", "message": "null" },
+                {
+                  "title": "Address",
+                  "message": "SHOP NO 3, GROUND FLOOR, KRISHNALEELA BUILDING, MILKAT NO.1895, SURVEY NO.39/6/2, MARUNJI, MULSHI, District - Pune PMC & Rural, STATE - Maharashtra"
+                },
+                { "title": "Cuisines", "message": "Desserts,Ice Cream" }
+              ],
+              "totalRatings": 337,
+              "aggregatedDiscountInfoV2": {
+                "header": "Flat ₹100 off",
+                "shortDescriptionList": [
+                  {
+                    "meta": "Flat ₹100 off on orders above ₹349",
+                    "discountType": "Flat",
+                    "operationType": "RESTAURANT"
+                  },
+                  {
+                    "meta": "50% off | Use SPECIALS",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                  }
+                ],
+                "descriptionList": [
+                  {
+                    "meta": "Flat ₹100 off on orders above ₹349 | Use code FLAT100",
+                    "discountType": "Flat",
+                    "operationType": "RESTAURANT"
+                  },
+                  {
+                    "meta": "50% off up to ₹100 on select items | Use code SPECIALS",
+                    "discountType": "Percentage",
+                    "operationType": "RESTAURANT"
+                  }
+                ],
+                "couponDetailsCta": "View coupon details"
+              },
+              "type": "F",
+              "nudgeBanners": [
+                {
+                  "minValue": 244,
+                  "maxValue": 349,
+                  "priority": 1,
+                  "couponCode": "FLAT100",
+                  "discountInfo": { "discountType": "Flat", "value": 100 },
+                  "lockedMessage": "Add items worth ₹<amount> to save ₹100 | Code FLAT100",
+                  "unlockedMessage": "FLAT100 Coupon Unlocked! Use it to save ₹100",
+                  "logoCtx": {}
+                },
+                {
+                  "minValue": 454,
+                  "maxValue": 649,
+                  "priority": 3,
+                  "couponCode": "FLAT175",
+                  "discountInfo": { "discountType": "Flat", "value": 175 },
+                  "lockedMessage": "Add items worth ₹<amount> to save ₹175 | Code FLAT175",
+                  "unlockedMessage": "FLAT175 Coupon Unlocked! Use it to save ₹175",
+                  "logoCtx": {}
+                }
+              ],
+              "headerBanner": {
+                "url": "swiggy://webview?is_external=false&webview_url=https://www.swiggy.com/restaurant-info/331881"
+              },
+              "expectationNotifiers": [
+                {
+                  "text": "<b>1.7 kms</b> | ₹29 Delivery fee will apply",
+                  "icon": { "imageId": "v1648635511/Delivery_fee_new_cjxumu" },
+                  "popup": { "cta": {} },
+                  "type": "DISTANCE_FEE_NON_FOOD_LM",
+                  "enrichedText": "<b>1.7 kms</b> | ₹29 Delivery fee will apply",
+                  "halfCardPopup": { "halfCardPopupHeader": {} },
+                  "trailingIcon": {}
+                }
+              ],
+              "generalPurposeInfoListV2": [
+                { "cta": { "info": { "recordings": {} }, "linkCta": {} } }
+              ],
+              "ratingSlab": "RATING_SLAB_5",
+              "orderabilityCommunication": {
+                "title": {},
+                "subTitle": {},
+                "message": {},
+                "customIcon": {}
+              },
+              "hasBestsellerItems": true,
+              "cartOrderabilityNudgeBanner": {
+                "parameters": {},
+                "presentation": {}
+              },
+              "latLong": "18.60502,73.727279",
+              "backgroundImageOverlayInfo": {},
+              "featuredSectionInfo": {}
+            },
+            "analytics": {}
+          },
+          "relevance": {
+            "type": "RELEVANCE_TYPE_CHECK_ORDERABILITY_ON_ITEM_ADD",
+            "sectionId": "POP_UP_CROUTON_MENU"
+          }
+        }
+      },
+      {
+        "card": {
+          "card": {
+            "@type": "type.googleapis.com/swiggy.gandalf.widgets.v2.GridWidget",
+            "layout": {
+              "rows": 1,
+              "columns": 5,
+              "horizontalScrollEnabled": true,
+              "itemSpacing": 12,
+              "lineSpacing": 10,
+              "widgetPadding": {},
+              "containerStyle": {
+                "containerPadding": { "left": 10, "right": 10, "bottom": 16 }
+              },
+              "scrollBar": {}
+            },
+            "id": "offerCollectionWidget_UX4",
+            "gridElements": {
+              "infoWithStyle": {
+                "@type": "type.googleapis.com/swiggy.presentation.food.v2.OfferInfoWithStyle",
+                "offers": [
+                  {
+                    "info": {
+                      "header": "Extra ₹25 off",
+                      "offerTagColor": "#E46D47",
+                      "logoBottom": "rng/md/ads/production/d07196b25b85d1fd9951e10c255ab737",
+                      "offerIds": ["c5a48524-bc68-46dd-a7ca-7ef2e842c762"],
+                      "expiryTime": "1970-01-01T00:00:00Z",
+                      "description": "APPLICABLE OVER & ABOVE COUPONS",
+                      "offerType": "offers",
+                      "restId": "331881",
+                      "offerLogo": "rng/md/ads/production/d07196b25b85d1fd9951e10c255ab737",
+                      "descriptionTextColor": "#7302060C"
+                    },
+                    "cta": { "type": "OFFER_HALF_CARD" }
+                  },
+                  {
+                    "info": {
+                      "header": "FLAT ₹100 OFF",
+                      "offerTag": "FLAT DEAL",
+                      "offerTagColor": "#E46D47",
+                      "offerIds": ["2177ffc4-a2c7-4c9e-9f24-44ae8c30cfac"],
+                      "expiryTime": "1970-01-01T00:00:00Z",
+                      "couponCode": "USE FLAT100",
+                      "description": "ABOVE ₹349",
+                      "offerType": "offers",
+                      "restId": "331881",
+                      "offerLogo": "offers/generic",
+                      "descriptionTextColor": "#7302060C"
+                    },
+                    "cta": { "type": "OFFER_HALF_CARD" }
+                  },
+                  {
+                    "info": {
+                      "header": "50% OFF UPTO ₹100",
+                      "offerTagColor": "#E46D47",
+                      "offerIds": ["4042718c-4382-4f4f-bb15-41656af1b920"],
+                      "expiryTime": "1970-01-01T00:00:00Z",
+                      "couponCode": "USE SPECIALS",
+                      "description": "ON SELECT ITEMS",
+                      "offerType": "offers",
+                      "restId": "331881",
+                      "offerLogo": "offers/generic",
+                      "descriptionTextColor": "#7302060C"
+                    },
+                    "cta": { "type": "OFFER_HALF_CARD" }
+                  },
+                  {
+                    "info": {
+                      "header": "FLAT ₹175 OFF",
+                      "offerTagColor": "#E46D47",
+                      "offerIds": ["f55950b3-5bbf-4c2c-9170-b0b385a04031"],
+                      "expiryTime": "1970-01-01T00:00:00Z",
+                      "couponCode": "USE FLAT175",
+                      "description": "ABOVE ₹649",
+                      "offerType": "offers",
+                      "restId": "331881",
+                      "offerLogo": "offers/generic",
+                      "descriptionTextColor": "#7302060C"
+                    },
+                    "cta": { "type": "OFFER_HALF_CARD" }
+                  },
+                  {
+                    "info": {
+                      "header": "20% OFF UPTO ₹150",
+                      "offerTagColor": "#E46D47",
+                      "logoBottom": "MARKETING_BANNERS/IMAGES/OFFERS/2024/10/3/9ed30437-649e-4f5c-a152-c1347ecd58e0_HSBC.png",
+                      "offerIds": ["178f0999-e46b-455a-a663-867785a510a5"],
+                      "expiryTime": "1970-01-01T00:00:00Z",
+                      "couponCode": "USE HSBCDELIGHTS",
+                      "description": "ABOVE ₹499",
+                      "offerType": "offers",
+                      "restId": "331881",
+                      "offerLogo": "MARKETING_BANNERS/IMAGES/OFFERS/2024/10/3/9ed30437-649e-4f5c-a152-c1347ecd58e0_HSBC.png",
+                      "descriptionTextColor": "#7302060C"
+                    },
+                    "cta": { "type": "OFFER_HALF_CARD" }
+                  }
+                ],
+                "habitMilestoneInfo": { "callout": {} },
+                "loyaltyDiscoverPresentationInfo": { "logoCtx": {} }
+              }
+            }
+          }
+        }
+      },
+      {
+        "groupedCard": {
+          "cardGroupMap": {
+            "REGULAR": {
+              "cards": [
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.MenuVegFilterAndBadge",
+                      "isPureVeg": true,
+                      "badges": {},
+                      "vegOnlyDetails": {
+                        "imageId": "AutoVegOnly_qkjowj",
+                        "title": "Showing only vegetarian options.",
+                        "description": "Tap on the VEG ONLY button to turn off the setting"
+                      },
+                      "offersFilter": {
+                        "attributes": { "displayText": "50% OFF" }
+                      },
+                      "topRatedFilter": {
+                        "attributes": { "displayText": "Ratings 4.0+" }
+                      },
+                      "kidsCategoryFilter": {
+                        "attributes": {
+                          "displayText": "Kids Favourites",
+                          "tooltip": {
+                            "enabled": true,
+                            "displayText": "Kids Favourites Filter applied. Remove this filter to see the full Menu."
+                          }
+                        }
+                      },
+                      "vegFilter": { "attributes": { "displayText": "VEG" } },
+                      "nonvegFilter": {
+                        "attributes": { "displayText": "NONVEG" }
+                      }
+                    },
+                    "relevance": {
+                      "type": "RELEVANCE_TYPE_ON_MENU_FILTER_TOGGLED",
+                      "sectionId": "MENU_FILTER_TOGGLE"
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Recommended",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391033",
+                              "name": "Cornetto Butterscotch, 105ml",
+                              "category": "Cornetto ",
+                              "description": "Creamy butterscotch loaded with chunks of caramel cashew topping in a crunchy waffle cone. Kcal/Serving198",
+                              "imageId": "2f25b3897c950594eda32c440147c0c1",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 4500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "4.4",
+                                  "ratingCount": "7 ratings",
+                                  "ratingCountV2": "7"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391019",
+                              "name": "Magnum Almond Ice Cream, 80ml",
+                              "category": "Magnum Ice Cream",
+                              "description": "Expertly crafted icecream with Madagascar vanilla, crunchy Australian almonds and Belgian chocolate. Kcal/Serving223",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/13219cfb-a3f1-422b-b5a4-1980e74cd9bb_87977043-247e-433f-ae4a-cd90ba7edb04.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 9900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "4.9",
+                                  "ratingCount": "16 ratings",
+                                  "ratingCountV2": "16"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391008",
+                              "name": "Cadbury Crackle Tub, 700ml",
+                              "category": "Family Tubs",
+                              "description": "A Cadbury lover's delight! Cadbury Crackle chocolate balls in creamy chocolate tub with swirls of rich chocolate sauce. A perfect partner for celebrations! Kcal/Serving155",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/24eadc4c-39d1-4e55-8e7b-b48529d22536_1f45bf87-731d-4992-9625-a29e35946379.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 37900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896443",
+                              "name": "Butterscotch Party Pack [700ml x 2pcs]",
+                              "category": " Party Packs",
+                              "description": "Creamy butterscotch Party Pack loaded with chunks of caramel coated cashew nuts. Kcal/Serving252",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/bec1cb77-d3d7-4396-9d97-62228727046e_83bcd2bf-a95e-4973-9ba8-a51200344911.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 30000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896442",
+                              "name": "Oreo Party Pack [700ml x 2pcs]",
+                              "category": " Party Packs",
+                              "description": "The Original Oreo Party Pack!\nCrunchy Oreo cookie chunks in rich creamy vanilla.  Kcal/Serving252",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/7cc4f4bf-7a65-4ed0-b085-a873cf4eec35_ceb81f05-0eb9-4804-991c-0c3d88dc3fb2.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 39800,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "114120798",
+                              "name": "Trixy Cookie Sundae 110ml",
+                              "category": "Single Serve Cups",
+                              "description": "(110ml) Parlour like fun in a cup. \n3 delicious layers - silky chocolate disc, delicious cookies & cream and crunchy choco cookies. Kcal/Serving235",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/ab4fa7f8-92de-45f5-896f-fdbe08e6aa7c_f464e122-da96-4bd9-a41c-4b17599431fe.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 7000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {
+                                "text": "Bestseller",
+                                "textColor": "#ffffff",
+                                "topBackgroundColor": "#d53d4c",
+                                "bottomBackgroundColor": "#b02331"
+                              },
+                              "showImage": true,
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "isBestseller": true,
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896440",
+                              "name": "Aamras [60ml x 2pcs]",
+                              "category": "Duo Packs",
+                              "description": "Aamras All Year Round!\nDelicious mango stick made with pulp of real alphonso mangoes. Kcal/Serving195",
+                              "imageId": "uyouh3ybucyl6ol8q4ub",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 6000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "5.0",
+                                  "ratingCount": "4 ratings",
+                                  "ratingCountV2": "4"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896439",
+                              "name": "Black Forest Feast  - [70ml x 3pcs]",
+                              "category": "Duo Packs",
+                              "description": "Black Forest cake meets Feast!\nCake pieces through layers of Feast with a solid chocolate surprise at the end. Kcal/Serving249",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/febd3709-6475-41c5-8520-f8c758d00517_316dc043-8cc4-4739-8e0b-e352c478f69c.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 13500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "showImage": true,
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ],
+                      "type": "CATEGORY_TYPE_RECOMMENDED"
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Family Tubs",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391031",
+                              "name": "Divine Chocolate Tub (Chocochips), 700ml",
+                              "category": "Family Tubs",
+                              "description": "A real chocolate indulgence made with rich cocoa. Loaded with Choco chips & rich chocolate sauce in every creamy scoop. Kcal/Serving126",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/a4517aa4-281c-4210-a269-7aa791e88ff8_cdf54d6d-21a8-4564-8447-da80d3bc5ccf.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 25900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {
+                                "text": "Bestseller",
+                                "textColor": "#ffffff",
+                                "topBackgroundColor": "#d53d4c",
+                                "bottomBackgroundColor": "#b02331"
+                              },
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "isBestseller": true,
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "114120790",
+                              "name": "Hazelnut Chocolate Ice Cream 500ml",
+                              "category": "Family Tubs",
+                              "description": "Ice Cream with Hazelnuts Decadent Chocolate Ice Cream full of crunchy and roasted hazelnuts and chocolate. Kcal/Serving165",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/3/8/1acf165a-5a6a-4fd4-a238-f2caed892064_08d5e7d1-2942-4e48-9756-96b21fb6753a_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 32500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "4.7",
+                                  "ratingCount": "3 ratings",
+                                  "ratingCountV2": "3"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391008",
+                              "name": "Cadbury Crackle Tub, 700ml",
+                              "category": "Family Tubs",
+                              "description": "A Cadbury lover's delight! Cadbury Crackle chocolate balls in creamy chocolate tub with swirls of rich chocolate sauce. A perfect partner for celebrations! Kcal/Serving155",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/24eadc4c-39d1-4e55-8e7b-b48529d22536_1f45bf87-731d-4992-9625-a29e35946379.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 37900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391010",
+                              "name": "Oreo & Cream, 700ml",
+                              "category": "Family Tubs",
+                              "description": "The OG Oreo Tub!\nCrunchy Oreos chunks in rich creamy vanilla. Kcal/Serving126",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/5205c7cd-139e-4209-a3b3-82bb5aa5e39e_6ee4420d-e9cb-49b4-b550-4ae5d0b33bc0.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 29900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Magnum Ice Cream",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391019",
+                              "name": "Magnum Almond Ice Cream, 80ml",
+                              "category": "Magnum Ice Cream",
+                              "description": "Expertly crafted icecream with Madagascar vanilla, crunchy Australian almonds and Belgian chocolate. Kcal/Serving223",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/13219cfb-a3f1-422b-b5a4-1980e74cd9bb_87977043-247e-433f-ae4a-cd90ba7edb04.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 9900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "4.9",
+                                  "ratingCount": "16 ratings",
+                                  "ratingCountV2": "16"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391017",
+                              "name": "Magnum Brownie Ice Cream, 80ml",
+                              "category": "Magnum Ice Cream",
+                              "description": "Expertly crafted icecream with brownie flavour, crunchy cashew and Belgian chocolate. Kcal/Serving224",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/25/6054fa05-6a31-41f9-ad26-222fa63c1d54_4e2f3ee9-e0ea-46c7-9bc6-c8bfb5338cb4.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 9900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {
+                                "text": "Bestseller",
+                                "textColor": "#ffffff",
+                                "topBackgroundColor": "#d53d4c",
+                                "bottomBackgroundColor": "#b02331"
+                              },
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "isBestseller": true,
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "5.0",
+                                  "ratingCount": "11 ratings",
+                                  "ratingCountV2": "11"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391022",
+                              "name": "Magnum Chocolate Truffle Ice Cream, 80ml",
+                              "category": "Magnum Ice Cream",
+                              "description": "Rich chocolate icecream with truffle sauce wrapped in thick Belgian chocolate. Kcal/Serving182",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/25/9b33426f-690a-4b0a-9907-2e050407c862_41cf042b-4574-49aa-97f3-bfea6a0b4054.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 9900,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "5.0",
+                                  "ratingCount": "12 ratings",
+                                  "ratingCountV2": "12"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Cornetto ",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391033",
+                              "name": "Cornetto Butterscotch, 105ml",
+                              "category": "Cornetto ",
+                              "description": "Creamy butterscotch loaded with chunks of caramel cashew topping in a crunchy waffle cone. Kcal/Serving198",
+                              "imageId": "2f25b3897c950594eda32c440147c0c1",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 4500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "4.4",
+                                  "ratingCount": "7 ratings",
+                                  "ratingCountV2": "7"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391037",
+                              "name": "Cornetto Choco Vanilla ( Choco chips) , 105ml x 4",
+                              "category": "Cornetto ",
+                              "description": "A duo of rich and creamy vanilla topped with chocolate sauce and Choco chips in a crunchy waffle cone. Kcal/Serving177",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/1f916795-822d-4a61-8567-bc64e88df5af_ad6fe04f-b151-45b3-817f-b3c372b88f0a.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 12000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391035",
+                              "name": "Cornetto Choco Brownie, 110ml",
+                              "category": "Cornetto ",
+                              "description": "Disc as soft as a kiss!\nCrunchy waffle cone filled with creamy chocolate and brownie pieces with a soft chocolate disc and almond sprinkles on top. Kcal/Serving249",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/8/26/e01abe03-28bd-45e8-b433-9e3b1e39e86a_114e9f15-5809-4ba2-ba42-be7b069de196.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 7000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "149779507",
+                              "name": "Cornetto Double Chocolate Ice cream 105 ml",
+                              "category": "Cornetto ",
+                              "description": "Duo of milk and dark chocolate topped with chocolate sauce, chocochips in a crunchy waffle cone. Kcal/Serving: 184",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/8/2/d32b20d9-6c27-4213-9f1e-21afb2156b3b_846a3f6e-07e8-4eb6-9511-fc5bda514090.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 4000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391039",
+                              "name": "Cornetto Oreo, 110ml",
+                              "category": "Cornetto ",
+                              "description": "Oreo cookie chunks in creamy vanilla, delicious chocolate disc and crunchy waffle cone.  An all time favourite for cone lovers! Kcal/Serving246",
+                              "imageId": "2d665bfdf73e8abb87bcc2252d3d8482",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 7000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391038",
+                              "name": "Cornetto Salted Caramel Brownie, 110ml",
+                              "category": "Cornetto ",
+                              "description": "Sweet and Salty! Crunchy waffle cone loaded with salted caramel, brownies and topped with a soft chocolate disc. Kcal/Serving250",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/ccdc83a3-a34b-450c-8f2b-b11aa2a99c63_5ffd60cb-c8be-4c18-a63f-5ba249f440ff.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 7000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {
+                                "text": "Bestseller",
+                                "textColor": "#ffffff",
+                                "topBackgroundColor": "#d53d4c",
+                                "bottomBackgroundColor": "#b02331"
+                              },
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "isBestseller": true,
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": " Party Packs",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896443",
+                              "name": "Butterscotch Party Pack [700ml x 2pcs]",
+                              "category": " Party Packs",
+                              "description": "Creamy butterscotch Party Pack loaded with chunks of caramel coated cashew nuts. Kcal/Serving252",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/bec1cb77-d3d7-4396-9d97-62228727046e_83bcd2bf-a95e-4973-9ba8-a51200344911.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 30000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140390997",
+                              "name": "Blushing Strawberry Party Pack 700ml",
+                              "category": " Party Packs",
+                              "description": "A fruit lover's delight.\nA scoop that tastes like fresh strawberries.  Kcal/Serving112",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/b2bec1ce-0775-47c6-82cc-d3c3a87eeade_e8af665d-daa5-4398-82a6-6410786af9e9.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 12500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140390995",
+                              "name": "Chocolate Party Pack 700ml",
+                              "category": " Party Packs",
+                              "description": "Finest chocolate scoop made with rich cocoa. So rich & chocolatey that will make you go Choco Doodle Do. Kcal/Serving114",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/28a591d4-b4bb-4105-94aa-b82b2345559d_721ebbb7-4fa2-4af5-b7ab-ac12e711e855.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 15000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896445",
+                              "name": "Mango Party Pack [700ml x 2pcs]",
+                              "category": " Party Packs",
+                              "description": "Enjoy the delight of real  alphonso mango in a delicious creamy Party Pack.  A fruit lover's ultimate delight! Kcal/Serving188",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/105c6d00-ac19-47a4-8737-a7a411777893_78cb2395-475b-4340-9ace-de4b7a37ca6d.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 31000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896442",
+                              "name": "Oreo Party Pack [700ml x 2pcs]",
+                              "category": " Party Packs",
+                              "description": "The Original Oreo Party Pack!\nCrunchy Oreo cookie chunks in rich creamy vanilla.  Kcal/Serving252",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/7cc4f4bf-7a65-4ed0-b085-a873cf4eec35_ceb81f05-0eb9-4804-991c-0c3d88dc3fb2.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 39800,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Kwality Wall's New Arrivals ",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391042",
+                              "name": "Feast Cadbury Crackle 70ml",
+                              "category": "Kwality Wall's New Arrivals ",
+                              "description": "Experience the delight of Cadbury Crackle chocolate in a Kwality Walls Feast. Every bite has the deliciousness of Cadbury crackle Chocolate with signature hard chocolate. For any chocolate lover",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/7ba31cec-da68-4025-a3b3-29c32732ad2a_c89cbdc8-73f6-4e06-846c-f74136d5f679.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 6000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "3.4",
+                                  "ratingCount": "4 ratings",
+                                  "ratingCountV2": "4"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "149779493",
+                              "name": "Divine Chocolate Choco Chip Cup 100ml                ",
+                              "category": "Kwality Wall's New Arrivals ",
+                              "description": "A Real Chocolate Indulgence Made With Rich Cocoa. Loaded With Choco chips & Rich Chocolate Sauce In Every Creamy Bite. Kcal/Serving133",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/8/26/cf8a3929-c54c-463d-b5c6-882e2842057d_dd31836f-c5f9-417a-8273-a490881ade57.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 8000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "149779481",
+                              "name": "Dry Fruit Delight Cup 100ml                           ",
+                              "category": "Kwality Wall's New Arrivals ",
+                              "description": "A Dry Fruit Lover's Dessert! Cashews , Almonds and  Raisins In Every Bite, a perfect dry fruit cup  Kcal/Serving126",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/8/26/4d3bfab9-571e-47c9-9373-e623b4fbad55_a0cfc691-ea3a-4389-852f-3f4c7c78f32e.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 8000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "149779480",
+                              "name": "Choco Brownie Fudge Cup 100ml            ",
+                              "category": "Kwality Wall's New Arrivals ",
+                              "description": "Rich Chocolate Full Of Chunky Brownie Pieces And Chocolate Fudge. Kcal/Serving144",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/8/26/0ece7b88-0040-43ca-9af8-5b466dd376e2_52edc7fa-8538-4f04-a41c-68a6e0c3c88b.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 8000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Duo Packs",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896440",
+                              "name": "Aamras [60ml x 2pcs]",
+                              "category": "Duo Packs",
+                              "description": "Aamras All Year Round!\nDelicious mango stick made with pulp of real alphonso mangoes. Kcal/Serving195",
+                              "imageId": "uyouh3ybucyl6ol8q4ub",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 6000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": {
+                                "aggregatedRating": {
+                                  "rating": "5.0",
+                                  "ratingCount": "4 ratings",
+                                  "ratingCountV2": "4"
+                                }
+                              }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896439",
+                              "name": "Black Forest Feast  - [70ml x 3pcs]",
+                              "category": "Duo Packs",
+                              "description": "Black Forest cake meets Feast!\nCake pieces through layers of Feast with a solid chocolate surprise at the end. Kcal/Serving249",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/febd3709-6475-41c5-8520-f8c758d00517_316dc043-8cc4-4739-8e0b-e352c478f69c.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 13500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Slow ChurnNew Artisanal Fruit Ice Cream",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "123912441",
+                              "name": "Slow Churn Strawberry Ice Cream 500 ML",
+                              "category": "Slow ChurnNew Artisanal Fruit Ice Cream",
+                              "description": "Handpicked real Strawberry and fresh milk cream, slowly churned to give a gourmet icecream. Best for those who love natural berries in ice creams Kcal/Serving124",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/4f07cd73-f0cb-4e4e-a191-178397767a61_a33ee726-6b9d-4d6c-8f0d-fff4f656b7f5.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 37500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "140391045",
+                              "name": "Slow Churn Pink Guava Ice Cream 500 ML",
+                              "category": "Slow ChurnNew Artisanal Fruit Ice Cream",
+                              "description": "Indulge in an artisanal  icecream made by slowly churning fresh milk cream and Pink Guavas. Delight natural fruit ice cream lovers. Kcal/Serving129",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/29dc7a86-1e0e-4c26-aeb8-79245d859068_8219e604-74ef-450a-a8d8-3280b573a929.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 37500,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {},
+                              "type": "ITEM",
+                              "offerTags": [
+                                {
+                                  "title": "50% OFF",
+                                  "subTitle": "USE SPECIALS",
+                                  "textColor": "#DB6742",
+                                  "backgroundColor": "#FAE8E3"
+                                }
+                              ],
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory",
+                      "title": "Single Serve Cups",
+                      "itemCards": [
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "114120798",
+                              "name": "Trixy Cookie Sundae 110ml",
+                              "category": "Single Serve Cups",
+                              "description": "(110ml) Parlour like fun in a cup. \n3 delicious layers - silky chocolate disc, delicious cookies & cream and crunchy choco cookies. Kcal/Serving235",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/23/ab4fa7f8-92de-45f5-896f-fdbe08e6aa7c_f464e122-da96-4bd9-a41c-4b17599431fe.jpg",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 7000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {
+                                "text": "Bestseller",
+                                "textColor": "#ffffff",
+                                "topBackgroundColor": "#d53d4c",
+                                "bottomBackgroundColor": "#b02331"
+                              },
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "isBestseller": true,
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        },
+                        {
+                          "card": {
+                            "@type": "type.googleapis.com/swiggy.presentation.food.v2.Dish",
+                            "info": {
+                              "id": "121896462",
+                              "name": "Oreo and Cream Cup 100ml",
+                              "category": "Single Serve Cups",
+                              "description": "Crunchy oreo cookie chunks with rich and creamy vanilla in a cup.",
+                              "imageId": "FOOD_CATALOG/IMAGES/CMS/2024/8/26/ddcb7bc6-adb2-49a1-8962-cd114b3601cc_7cb87098-08b5-43e2-861e-decdae050c40.jpg_compressed",
+                              "inStock": 1,
+                              "isVeg": 1,
+                              "price": 6000,
+                              "variants": {},
+                              "variantsV2": {},
+                              "itemAttribute": { "vegClassifier": "VEG" },
+                              "ribbon": {
+                                "text": "Bestseller",
+                                "textColor": "#ffffff",
+                                "topBackgroundColor": "#d53d4c",
+                                "bottomBackgroundColor": "#b02331"
+                              },
+                              "type": "ITEM",
+                              "itemBadge": {},
+                              "badgesV2": {},
+                              "isBestseller": true,
+                              "ratings": { "aggregatedRating": {} }
+                            },
+                            "analytics": {},
+                            "hideRestaurantDetails": true
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.RestaurantLicenseInfo",
+                      "type": "FSSAI",
+                      "imageId": "fssai_final_edss9i",
+                      "text": ["License No. 21520180000638"]
+                    }
+                  }
+                },
+                {
+                  "card": {
+                    "card": {
+                      "@type": "type.googleapis.com/swiggy.presentation.food.v2.RestaurantAddress",
+                      "name": "Kwality Walls Ice Cream and More",
+                      "area": "Hinjawadi",
+                      "completeAddress": "SHOP NO 3, GROUND FLOOR, KRISHNALEELA BUILDING, MILKAT NO.1895, SURVEY NO.39/6/2, MARUNJI, MULSHI, District - Pune PMC & Rural, STATE - Maharashtra"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "firstOffsetRequest": true,
+    "isQCLink": false
+  },
+  "tid": "d1949f35-42eb-4821-ae2a-95e6d7ced94e",
+  "sid": "giffa776-75c0-4845-91dd-dde7fb0be404",
+  "deviceId": "c3d73981-0664-8f62-2913-bafacc607800",
+  "csrfToken": "YmdjDDhXXKYc-gxd_wAt5JDDdT18_aYL2U11TDYA"
+}

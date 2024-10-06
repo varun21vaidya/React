@@ -12,6 +12,7 @@ import UserContext from "../utils/UserContext";
 
 export const Body = () => {
     const hotelDataList = useFetchRestaurantData() || []; 
+    // console.log("hotelDataList",hotelDataList)
     const [filteredList, setFilteredList] = useState([]);
 
     // Higher Order Component
@@ -21,6 +22,10 @@ export const Body = () => {
     // Context
     const {loggedInUser, setUserName} = useContext(UserContext)
 
+    useEffect(()=>{
+    // for initial rendering
+
+    },[])
     if (hotelDataList.length!==0 && filteredList.length===0){
         setFilteredList(hotelDataList);
     }
@@ -39,6 +44,7 @@ export const Body = () => {
                 let x = hotel?.info?.name?.toLowerCase().indexOf(searchTerm);
                 return x > -1;
             });
+            // console.log("tempList.length",searchTerm, tempList.length)
         }
         setFilteredList(tempList);
     }
@@ -56,7 +62,7 @@ export const Body = () => {
             <div className="body">
                 <div className="search">
                     <input
-                        className="searchbar">
+                        className="searchbar" placeholder="Search Restaurants">
                     </input>
                 </div>
                 <ShimmerContainer/>
@@ -70,8 +76,9 @@ export const Body = () => {
                 <div className="search m-4 p-4 shadow-sm border-spacing-5">
                     <input
                         className="searchbar w-80 p-2 border border-solid border-black"
-                        placeholder="Search Resturants"
-                        onKeyUp={HandleSearch}
+                        placeholder="Search Restaurants"
+                        data-testid="SearchInput"
+                        onChange={HandleSearch}
                     ></input>
                 </div>
 
@@ -80,10 +87,10 @@ export const Body = () => {
                         className="filter-btn px-4 py-2 bg-pink-50"
                         onClick={() => {
                             const tempList = filteredList.filter(
-                                (hotel) => hotel?.info?.avgRating >= 4
+                                (hotel) => hotel?.info?.avgRating >= 4.5
                             );
+                            // console.log("clicked top rated", tempList.map(card => card?.info?.name));
                             setFilteredList(tempList);
-                            console.log("filtered", filteredList);
                         }}
                     >
                         Top Rated Restaurants

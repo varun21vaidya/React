@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
 
 const Cart = () => {
-  console.log("inside cart component");
+  // console.log("inside cart component");
   const cartItems = useSelector((store) => store?.cart?.items);
 
   const dispatch = useDispatch()

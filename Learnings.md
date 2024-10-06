@@ -14,7 +14,20 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
 
+
     React.createElement does not create HTML element it creates object
+
+      const parent = React.createElement("div", { id: "parent" }, [
+          React.createElement("div", { id: "child1" }, [
+            React.createElement("h1", {}, "I am H1 Tag"),
+            React.createElement("h2", {}, "I am H2 Tag"),
+          ]),
+          React.createElement("div", { id: "child2" }, [
+            React.createElement("h3", {}, "I am H3 Tag"),
+            React.createElement("h4", {}, "I am H4 Tag"),
+          ]),
+        ]);
+
     const root = ReactDOM.createRoot(document.getElementById("root"));
 
     // render is creating element by taking the object and converting it into heading tag and modify dom tree
@@ -54,7 +67,7 @@
 
       npx parcel index.html : hosts on localhost:1234
       - npm : install the package
-      - npx : execute the package
+      - npx : execute the package, If the package does not exist, npx will install the package to a folder in the npm cache.
       - so basically parcel goes to source index, builds the development build, and hosts.
 
       Install React:
@@ -62,14 +75,15 @@
       - npm install react-dom
       - add type="module" to script tag and import react and react-dom/client in app.js
 
-      Parcel:
+      Parcel: Web Application Bundler
+
       - uses file-watching algorithm (in c++)
       - caches files and gives faster builds (in parcel- cache folder)
       - image optimization
       - for prod build minify files, bundle them, compress them.
       - uses consistant hasing
       - code splitting
-      - uses differencial bundling (supports old browsers)
+      - uses differencial bundling (for old browsers transpiles our code to es5 equivalent, so that it could run on all browsers)
       - diagnostics and error suggestions
       - hosts on HTTPS (using --https)
       - can start in lazy mode (using --lazy)
@@ -77,7 +91,7 @@
       - different bundles for dev and prod (npx parcel build index.html for prod)
 
       Dist:
-      when you execute parcel, ut will bundle,minify and put in dist folder. When you change something, it will update dist and parcel-cache and show output from them.
+      when you execute parcel, it will bundle,minify and put in dist folder. When you change something, it will update dist and parcel-cache and show output from them.
       For production build if you have 10,20 html, css, js files, parcel will convert all of them into single html, css, js files and put it in dist.
 
       Support Old Browser Versions:
@@ -90,7 +104,7 @@
 
   ### JSX:
 
-      To redue complexity of reactelements to build HTML, JSX was created
+      To reduce complexity of react elements to build HTML, JSX was created
       - JSX is not HTML in Javascript.
       - JSX is HTML-like syntax or XML-like.
 
@@ -246,7 +260,7 @@
       Suppose we have container DOM which has 5 cards. Now the UI will change from 5 cards to 3 cards.
       React will create a virtual DOM of it. Its not actual DOM but representation of actual DOM, basically a react element.
 
-      remember when you printed any compoenent, it gave an object?
+      remember when you printed any component, it gave an object?
       This is basically an react element.
 
       This React Virtual DOM is react element / JS object.
@@ -278,10 +292,22 @@
       Now this concept was not new, but react took this and built core algo on top of it, and made it snappy
       by comparing 2 virtual DOMs and updating the actual DOM.
 
-      So as soon as you call setHotelList, it starts its reconcilliation algorithm, and starts rerendering your page.
+      So as soon as you call setHotelList, it starts its algorithm, and starts rerendering your page.
       Thats why you need saperate call function to update state, so when you call it react will find the div and update UI.
 
-    
+  #### Traditional Diff Algorithm:
+
+      The traditional diff algorithm in React compares the old virtual DOM (VDOM) with the new VDOM to identify changes and update the real DOM efficiently. 
+      It operates in a synchronous, blocking manner, processing the entire VDOM at once. This approach treats all updates equally, applying them in bulk, which can lead to performance bottlenecks in larger applications or scenarios with heavy computations. 
+      Since it works on entire subtrees, even minor changes can trigger updates across larger portions of the UI, which may lead to unnecessary DOM manipulation. 
+      The algorithm does not support interruptions, which can cause the UI to freeze during long updates. While it focuses on efficiently updating the DOM, it lacks prioritization and concurrency control, making it less suited for complex or performance-critical applications.
+
+  #### React Fiber Algorithm:
+
+      React Fiber, introduced in React 16, is an advanced reconciliation algorithm designed to enhance React’s performance by breaking rendering tasks into smaller units of work. 
+      It allows updates to be handled asynchronously and incrementally, preventing the UI from blocking during large or complex updates. Fiber supports priority levels, giving React the ability to prioritize critical tasks (like user input) over less urgent updates, improving responsiveness. 
+      The UI is split into fiber nodes, allowing for finer-grained updates, and tasks can be paused, resumed, or interrupted, enabling concurrent rendering. 
+      Fiber's ability to handle complex scenarios, such as animations or large-scale UI updates, makes it more efficient and flexible for modern, interactive applications.
 ## 6:
   
   #### Fetching data from API:

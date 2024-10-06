@@ -13,7 +13,7 @@ const useFetchRestaurantPage = (resId)=>{
         try{
             const response = await fetch(RestaurantPage_URL+resId);
             const json = await response.json();
-            console.log("got restaurant data", json)
+            // console.log("got restaurant data", json)
             setHotelInfo(json)
         }
         catch(error){

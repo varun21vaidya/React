@@ -2,6 +2,7 @@
 // const root =  ReactDOM.createRoot(document.getElementById("root"));
 // root.render(heading);
 
+// ie React.createElement does not create HTML element it creates object
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child1" }, [
     React.createElement("h1", {}, "I am H1 Tag"),
@@ -13,7 +14,6 @@ const parent = React.createElement("div", { id: "parent" }, [
   ]),
 ]);
 console.log("parent", parent); // -->object
-// ie React.createElement does not create HTML element it creates object
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // render is creating element by taking the object and converting it into heading tag and modify dom tree

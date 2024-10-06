@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import logo from '../assets/snackhunt-logo.png';
+// import {logo} from '../assets/snackhunt-logo.png';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
@@ -19,13 +19,12 @@ const Header = ()=> {
     const {loggedInUser} = useContext(UserContext);
 
     const cartItems = useSelector((store)=> store.cart.items);
-    console.log("cart items",cartItems);
     return (
 
 
     <div id="heading" className="header flex justify-between bg-red-500">
         <div id="logo" className="logo-container">
-            <Link to="/" ><img src={logo} className="logo w-44"/></Link>
+            {/* <Link to="/" ><img src={logo} className="logo w-44"/></Link> */}
         </div>
         <nav id="nav-items" className="nav-items flex items-center text-base text-white font-bold">
             <ul className='flex p-4 m-4'>

@@ -10,7 +10,9 @@ const RestaurantPage = ()=>{
 
     const hotelInfo = useFetchRestaurantPage(resId);
 
+
     if (hotelInfo === null) return <ShimmerCard />
+    // console.log("hotelInfo",hotelInfo);
 
     const {name, locality, areaName, city, avgRatingString} = hotelInfo?.data?.cards[2]?.card?.card?.info;
     const hotelMenuDetails = hotelInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards;
